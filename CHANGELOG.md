@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-11T03:56:04+05:30 — Redesign the landing as a Baymax care dashboard
+
+- Changed: Replaced the former story-first hero with a dark San Fransokyo dashboard inspired by the supplied layout: compact icon rail, centered greeting, direct ask box, glass action cards, and a prominent Baymax companion card. Added dashboard shortcuts for check-ins, notes, care preparation, and privacy; added a bottom icon rail at narrow widths; made the demo-mode label visible; and moved Baymax below the header text. Updated responsive styling in `dashboard.css` while preserving the lower story and chat experience.
+- Why: Match the reference image’s immersive dashboard composition while keeping Baymax and the healthcare companion flows central.
+- Validation: Reloaded and inspected the page at the available 732 px viewport; exercised the front-page ask box through the demo chat. The cards use actions and copy rather than fabricated health readings. A 390 px phone-sized render remains unchecked.
+- Limitations: The Baymax art remains a supplied static render, and the optional live AI path still needs a configured key for testing.
+
 ## 2026-10-11T02:05:56+05:30 — Fix the narrow-window hero layout
 
 - Changed: Stacked the hero copy and Baymax artwork below 850 px so the companion and greeting card no longer collide in a narrow browser window.

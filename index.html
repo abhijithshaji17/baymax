@@ -7,30 +7,44 @@
   <meta name="description" content="Baymax is a calm, private companion for everyday health conversations and preparing for care.">
   <title>Baymax — care, at your pace</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
   <script src="app.js" defer></script>
 </head>
 <body>
   <div class="sky" aria-hidden="true"><div class="skyline skyline-back"></div><div class="skyline skyline-front"></div><div class="stars"></div></div>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Baymax home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span><span>BAYMAX<span class="brand-dot">®</span><small>PERSONAL CARE COMPANION</small></span></a>
-    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation">☰</button>
-    <nav id="mainNav" aria-label="Main navigation"><a href="#how">How it helps</a><a href="#privacy">Your privacy</a><button class="nav-notes" data-open-notes>My notes <span aria-hidden="true">↗</span></button><a class="nav-cta" href="#companion">Talk to Baymax <span aria-hidden="true">↗</span></a></nav>
+  <aside class="app-rail" aria-label="Baymax dashboard">
+    <a class="rail-brand" href="#home" aria-label="Baymax home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span><span class="rail-brand-name">BAYMAX<small>CARE</small></span></a>
+    <div class="rail-divider"></div>
+    <nav class="rail-nav" aria-label="Dashboard navigation">
+      <a class="rail-item is-active" href="#home" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 10 8-6 8 6v9a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+      <button class="rail-item" data-open-checkin aria-label="Check-in" title="Check-in"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg><span>Check-in</span></button>
+      <a class="rail-item" href="#companion" aria-label="Chat with Baymax" title="Chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 9 9 0 0 1-4-.9L4 20l1-4a7.5 7.5 0 1 1 15-4.5Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg><span>Chat</span></a>
+      <button class="rail-item" data-open-notes aria-label="My notes" title="My notes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10a2 2 0 0 1 2 2v14H5V6a2 2 0 0 1 2-2Z"/><path d="M9 4V2h6v2M8 9h8M8 13h8M8 17h5"/></svg><span>Notes</span></button>
+      <a class="rail-item" href="#privacy" aria-label="Privacy" title="Privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.3 8.2-8 10-4.7-1.8-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg><span>Privacy</span></a>
+    </nav>
+    <button class="rail-help" data-open-privacy aria-label="Safety and privacy details" title="Safety and privacy">?</button>
+  </aside>
+  <div class="app-content">
+  <header class="site-header dashboard-header">
+    <div class="dash-greeting"><h1>HEY, NEED HELP? <span aria-hidden="true">✳</span></h1><p>Just ask me anything</p></div>
+    <div class="profile-tools"><button class="quick-add" data-open-checkin aria-label="Start a new check-in" title="New check-in">+</button><button class="guest-profile" data-open-privacy><span class="guest-avatar" aria-hidden="true">✳</span><span>Your space<small>No account needed</small></span></button><span class="header-mode" id="dashboardMode">DEMO MODE</span></div>
   </header>
 
   <main>
-    <section class="hero section-wrap" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="live-dot"></span> A little support, whenever you need it</p>
-        <h1>Care that meets<br>you <em>where you are.</em></h1>
-        <p class="hero-lede">A calm place to talk through everyday health worries, check in with yourself, and get ready for a conversation with your care team.</p>
-        <div class="hero-actions"><a class="button button-primary" href="#companion">Talk to Baymax <span>↗</span></a><a class="text-link" href="#how">Get to know Baymax <span>↓</span></a></div>
-        <div class="hero-proof"><span class="avatar-stack" aria-hidden="true"><i>✳</i><i>♡</i><i>⌁</i></span><span>Here to listen. Always in your corner.</span></div>
+    <section class="dashboard-hero section-wrap" id="home">
+      <div class="dashboard-backdrop" aria-hidden="true"><div class="dashboard-halo"></div><img src="assets/baymax_preview.png" alt=""></div>
+      <div class="dashboard-welcome">
+        <p class="dashboard-kicker"><span class="live-dot"></span> A CALM PLACE TO START</p>
+        <form class="quick-ask" id="quickAskForm"><label class="sr-only" for="quickAskInput">Ask Baymax a question</label><textarea id="quickAskInput" rows="1" maxlength="2000" placeholder="Tell me what’s on your mind…" required></textarea><button type="submit" aria-label="Send to Baymax">↗</button></form>
+        <div class="quick-prompts"><span>TRY ASKING</span><button type="button" data-quick-ask="Help me prepare for a clinician visit.">Prepare for a visit</button><button type="button" data-quick-ask="I want to talk through how I’m feeling.">Talk through a feeling</button></div>
       </div>
-      <div class="hero-art" aria-label="Baymax, your personal care companion">
-        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-glow"></div>
-        <img class="baymax-hero" src="assets/baymax_preview.png" alt="A soft, rounded white Baymax with connected eyes and mitten hands" fetchpriority="high">
-        <div class="hello-card"><span class="hello-icon">✳</span><span><strong>Hello, friend.</strong><small>I'm here if you need me.</small></span><span class="card-spark">✦</span></div>
-        <div class="float-tag"><span class="float-heart">♡</span><span><strong>Made for your pace</strong><small>No account needed</small></span></div>
+      <div class="dashboard-grid" aria-label="Your Baymax care dashboard">
+        <article class="dash-card dash-check"><div class="dash-card-top"><span class="dash-icon orange-icon">◌</span><span class="dash-label">CHECK IN</span><span class="dash-meta">YOUR PACE</span></div><h2>How are you<br>feeling today?</h2><div class="mood-chips"><button type="button" data-mood="Okay">Okay</button><button type="button" data-mood="Stressed">Stressed</button><button type="button" data-mood="Not sure yet">Not sure</button></div><button class="dash-link" data-open-checkin>Start a check-in <span>↗</span></button></article>
+        <article class="dash-card dash-notes"><div class="dash-card-top"><span class="dash-icon lavender-icon">▤</span><span class="dash-label">MY NOTES</span><span class="dash-meta">OPTIONAL</span></div><h2>Your thoughts,<br>your choice.</h2><p>Keep a private note on this device when you choose to save it.</p><button class="dash-link" data-open-notes>Open my notes <span>↗</span></button></article>
+        <article class="dash-card dash-prep"><div class="dash-card-top"><span class="dash-icon pink-icon">♡</span><span class="dash-label">CARE PREP</span><span class="dash-meta">FOR YOUR NEXT VISIT</span></div><h2>Make space for<br>your questions.</h2><p>Build an editable summary from this conversation. Review it before saving.</p><button class="dash-link" data-open-notes data-prepare-summary>Prepare a summary <span>↗</span></button></article>
+        <article class="dash-card dash-start"><div class="dash-card-top"><span class="dash-label">A GOOD PLACE TO BEGIN</span><span class="dash-meta">NO ACCOUNT NEEDED</span></div><h2>Talk it out.<br>Take it one step at a time.</h2><p>Share what feels comfortable. Baymax can help you organize your thoughts and prepare for care.</p><a class="dash-link" href="#companion">Go to your conversation <span>↗</span></a></article>
+        <article class="dash-card dash-safety"><div class="dash-card-top"><span class="dash-icon mint-icon">◇</span><span class="dash-label">YOUR PRIVACY</span><span class="dash-meta">ALWAYS YOUR CALL</span></div><p>Chat stays in this tab. Notes are saved only if you choose. If you may be in immediate danger, contact local emergency services or someone you trust now.</p><button class="dash-link" data-open-privacy>Privacy & safety <span>↗</span></button></article>
+        <article class="dash-card dash-baymax"><div class="dash-card-top"><span class="dash-icon mint-icon">✳</span><span class="dash-label">BAYMAX</span><span class="dash-meta"><i></i> HERE WITH YOU</span></div><img src="assets/baymax_preview.png" alt="Baymax, your soft, rounded personal care companion" fetchpriority="high"><div class="baymax-card-copy"><strong>Hello, friend.</strong><small>I’m here whenever you’re ready.</small><a class="dash-link" href="#companion">Say hello <span>↗</span></a></div></article>
       </div>
       <a class="scroll-hint" href="#how"><span></span> SCROLL TO EXPLORE</a>
     </section>
@@ -62,6 +76,7 @@
     <section class="closing section-wrap"><div class="closing-light"></div><p class="eyebrow">WHENEVER YOU’RE READY</p><h2>You don’t have to<br>figure it out <em>alone.</em></h2><a class="button button-primary" href="#companion">Say hello to Baymax <span>↗</span></a><p class="closing-caption">A small step is still a step.</p><img src="assets/baymax_preview.png" alt="" loading="lazy"></section>
   </main>
   <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span><span>BAYMAX<small>PERSONAL CARE COMPANION</small></span></a><p>Made with care by Team Hamada <span>✳</span></p><a href="#privacy">Privacy & safety <span>↗</span></a></footer>
+  </div>
 
   <dialog id="checkinDialog" class="dialog"><form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close check-in">×</button></form><p class="eyebrow">A MOMENT FOR YOU</p><h2>Let’s check in.</h2><p class="dialog-lede">Share only what feels comfortable. You can skip anything.</p><form id="checkinForm" class="checkin-form"><label>How are you feeling today?<select id="moodSelect"><option value="">Choose if you like</option><option>Okay</option><option>A little low</option><option>Stressed</option><option>Uncomfortable</option><option>Not sure yet</option></select></label><label>What’s on your mind? <span>(optional)</span><textarea id="checkinText" rows="3" maxlength="1200" placeholder="Put it in your own words…"></textarea></label><label>How long has this been on your mind? <span>(optional)</span><select id="durationSelect"><option value="">Skip this question</option><option>Just today</option><option>A few days</option><option>A few weeks</option><option>Longer</option><option>Not sure</option></select></label><button class="button button-primary" type="submit">Continue to chat <span>↗</span></button><button class="skip-button" type="button" id="skipCheckin">Skip and just chat</button></form></dialog>
 

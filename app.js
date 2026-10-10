@@ -81,6 +81,7 @@ function setMode(mode) {
   const isLive = mode === 'ai';
   pill.classList.toggle('live', isLive);
   label.textContent = isLive ? 'AI mode · key configured' : 'Demo mode · sample replies';
+  document.querySelector('#dashboardMode').textContent = isLive ? 'AI MODE' : 'DEMO MODE';
 }
 
 async function loadMode() {
@@ -95,6 +96,26 @@ chatForm.addEventListener('submit', event => {
   event.preventDefault();
   sendMessage(chatInput.value);
 });
+document.querySelector('#quickAskForm').addEventListener('submit', event => {
+  event.preventDefault();
+  const quickAskInput = document.querySelector('#quickAskInput');
+  chatInput.value = quickAskInput.value;
+  quickAskInput.value = '';
+  document.querySelector('#companion').scrollIntoView({ behavior: 'smooth' });
+  chatForm.requestSubmit();
+});
+document.querySelector('#quickAskInput').addEventListener('keydown', event => {
+  if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); document.querySelector('#quickAskForm').requestSubmit(); }
+});
+document.querySelectorAll('[data-quick-ask]').forEach(button => button.addEventListener('click', () => {
+  const input = document.querySelector('#quickAskInput');
+  input.value = button.dataset.quickAsk;
+  input.focus();
+}));
+document.querySelectorAll('[data-mood]').forEach(button => button.addEventListener('click', () => {
+  document.querySelector('#moodSelect').value = button.dataset.mood;
+  openDialog(checkinDialog);
+}));
 chatInput.addEventListener('keydown', event => {
   if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); chatForm.requestSubmit(); }
 });
@@ -110,7 +131,12 @@ document.querySelector('#clearChat').addEventListener('click', () => {
 
 function openDialog(dialog) { if (!dialog.open) dialog.showModal(); }
 document.querySelectorAll('[data-open-checkin]').forEach(button => button.addEventListener('click', () => openDialog(checkinDialog)));
-document.querySelectorAll('[data-open-notes]').forEach(button => button.addEventListener('click', () => { loadNotes(); openDialog(notesDialog); }));
+document.querySelectorAll('[data-open-notes]').forEach(button => button.addEventListener('click', () => {
+  loadNotes();
+  openDialog(notesDialog);
+  if (button.hasAttribute('data-prepare-summary')) setTimeout(() => document.querySelector('#prepareSummary').click(), 100);
+}));
+document.querySelectorAll('[data-open-privacy]').forEach(button => button.addEventListener('click', () => openDialog(privacyDialog)));
 document.querySelector('#chatHelp').addEventListener('click', () => openDialog(privacyDialog));
 document.querySelector('#chatPrivacy').addEventListener('click', () => openDialog(privacyDialog));
 document.querySelectorAll('[data-close-dialog]').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));
@@ -167,6 +193,8 @@ document.querySelector('#prepareSummary').addEventListener('click', () => {
 
 const menuToggle = document.querySelector('#menuToggle');
 const mainNav = document.querySelector('#mainNav');
-menuToggle.addEventListener('click', () => { const open = mainNav.classList.toggle('open'); menuToggle.setAttribute('aria-expanded', String(open)); menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); });
-mainNav.querySelectorAll('a,button').forEach(item => item.addEventListener('click', () => { mainNav.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', () => { const open = mainNav.classList.toggle('open'); menuToggle.setAttribute('aria-expanded', String(open)); menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); });
+  mainNav.querySelectorAll('a,button').forEach(item => item.addEventListener('click', () => { mainNav.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
+}
 loadMode();
