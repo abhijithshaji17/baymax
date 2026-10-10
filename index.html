@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071323">
+  <meta name="description" content="Baymax is a calm, private companion for everyday health conversations and preparing for care.">
+  <title>Baymax — care, at your pace</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"><div class="skyline skyline-back"></div><div class="skyline skyline-front"></div><div class="stars"></div></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Baymax home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span><span>BAYMAX<span class="brand-dot">®</span><small>PERSONAL CARE COMPANION</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation">☰</button>
+    <nav id="mainNav" aria-label="Main navigation"><a href="#how">How it helps</a><a href="#privacy">Your privacy</a><button class="nav-notes" data-open-notes>My notes <span aria-hidden="true">↗</span></button><a class="nav-cta" href="#companion">Talk to Baymax <span aria-hidden="true">↗</span></a></nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> A little support, whenever you need it</p>
+        <h1>Care that meets<br>you <em>where you are.</em></h1>
+        <p class="hero-lede">A calm place to talk through everyday health worries, check in with yourself, and get ready for a conversation with your care team.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#companion">Talk to Baymax <span>↗</span></a><a class="text-link" href="#how">Get to know Baymax <span>↓</span></a></div>
+        <div class="hero-proof"><span class="avatar-stack" aria-hidden="true"><i>✳</i><i>♡</i><i>⌁</i></span><span>Here to listen. Always in your corner.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Baymax, your personal care companion">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-glow"></div>
+        <img class="baymax-hero" src="assets/baymax_preview.png" alt="A soft, rounded white Baymax with connected eyes and mitten hands" fetchpriority="high">
+        <div class="hello-card"><span class="hello-icon">✳</span><span><strong>Hello, friend.</strong><small>I'm here if you need me.</small></span><span class="card-spark">✦</span></div>
+        <div class="float-tag"><span class="float-heart">♡</span><span><strong>Made for your pace</strong><small>No account needed</small></span></div>
+      </div>
+      <a class="scroll-hint" href="#how"><span></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <section class="intro-strip section-wrap" id="how"><div class="strip-label"><span>01 — A FRIENDLY FIRST STEP</span><h2>Some days, you just<br>need a place to start.</h2></div><div class="strip-copy"><p>Big or small, your health questions deserve room to breathe. Baymax can listen, help you organize what’s on your mind, and prepare questions for a clinician.</p><p class="micro-note"><span>✳</span> Not a doctor. Not a diagnosis. Just a thoughtful first step.</p></div></section>
+
+    <section class="journey section-wrap" aria-label="Ways Baymax can help">
+      <article class="journey-card card-check"><div class="card-top"><span>02 — CHECK IN</span><span class="line-icon">◌</span></div><div class="card-illustration mood-illustration" aria-hidden="true"><div class="mood-sun"></div><span>☁</span><i></i></div><h3>Start with how<br>you’re feeling.</h3><p>A gentle check-in helps you put the moment into words. Skip any question, or just say what’s on your mind.</p><button class="card-action" data-open-checkin>Start a check-in <span>↗</span></button></article>
+      <article class="journey-card card-chat"><div class="card-top"><span>03 — TALK IT OUT</span><span class="line-icon">⌁</span></div><div class="mini-chat" aria-hidden="true"><div class="mini-bubble bubble-left">I've been feeling a little off lately.</div><div class="mini-bubble bubble-right">I'm here with you. What feels most important today?</div><div class="mini-compose">Write a message <span>↑</span></div></div><h3>A calm conversation,<br>on your terms.</h3><p>Share as much or as little as you like. No judgment, no pressure, no account to create.</p><a class="card-action" href="#companion">Talk to Baymax <span>↗</span></a></article>
+      <article class="journey-card card-notes"><div class="card-top"><span>04 — KEEP WHAT HELPS</span><span class="line-icon">⌑</span></div><div class="note-illustration" aria-hidden="true"><div class="note-sheet"><span>MY NOTES</span><i></i><i></i><i></i><b>♡</b></div><div class="note-sticker">✳</div></div><h3>Your notes stay<br>in your hands.</h3><p>Save an editable care summary on this device only, when you choose. Change or clear it any time.</p><button class="card-action" data-open-notes>Explore my notes <span>↗</span></button></article>
+    </section>
+
+    <section class="companion section-wrap" id="companion">
+      <div class="companion-heading"><div><p class="eyebrow"><span class="live-dot"></span> YOUR SPACE, YOUR PACE</p><h2>So, what’s on<br>your <em>mind?</em></h2></div><div class="mode-pill" id="modePill"><span class="mode-dot"></span><span id="modeLabel">Checking connection…</span></div></div>
+      <div class="care-note"><span class="care-note-icon">✳</span><p><strong>A quick note before we begin</strong><br>Baymax can share general information and help you prepare for care. It can’t diagnose, prescribe, or replace a clinician. If you may be in immediate danger, contact local emergency services or someone you trust now.</p></div>
+      <div class="chat-shell">
+        <aside class="chat-aside"><div class="aside-avatar"><img src="assets/baymax_preview.png" alt="" loading="lazy"></div><p class="aside-name">Baymax <span class="online-status"><i></i> Here with you</span></p><p class="aside-copy">You can start with a check-in, ask a general question, or simply talk.</p><div class="aside-divider"></div><p class="suggest-label">A few ways to begin</p><button class="starter" data-starter="I've been feeling a bit stressed lately."><span>♡</span> I’ve been feeling stressed</button><button class="starter" data-starter="Help me prepare for a conversation with my clinician."><span>✳</span> Prepare for a visit</button><button class="starter" data-starter="I have a general health question."><span>⌁</span> Ask a general question</button><button class="clear-chat" id="clearChat">Clear this conversation</button></aside>
+        <div class="chat-main"><div class="chat-topbar"><div class="chat-top-title"><span class="mobile-bot-mark">✳</span><span><strong>Chat with Baymax</strong><small>Private to this session</small></span></div><button id="chatHelp" class="help-button" aria-label="Read safety information" title="Safety information">ⓘ</button></div>
+          <div class="messages" id="messages" role="log" aria-live="polite" aria-relevant="additions text"><div class="welcome-message"><div class="message-avatar">✳</div><div class="message-content"><p class="message-name">Baymax <span>JUST NOW</span></p><div class="message-bubble">Hello. I’m Baymax, your personal healthcare companion. What would you like to talk about today?</div></div></div></div>
+          <div class="typing-indicator" id="typingIndicator" hidden><span class="typing-dots"><i></i><i></i><i></i></span> Baymax is thinking…</div>
+          <form class="composer" id="chatForm"><label class="sr-only" for="chatInput">Write a message to Baymax</label><textarea id="chatInput" rows="1" maxlength="2000" placeholder="Share what’s on your mind…" required></textarea><div class="composer-bottom"><span>Enter to send · Shift + Enter for a new line</span><button class="send-button" id="sendButton" aria-label="Send message"><span>Send</span><b>↑</b></button></div></form>
+          <p class="chat-footnote">Your conversation is only kept in this tab. <button id="chatPrivacy">How privacy works</button></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy section-wrap" id="privacy"><div class="privacy-mark">◈</div><div class="privacy-copy"><p class="eyebrow">05 — YOUR CARE, YOUR CALL</p><h2>Your health story<br>belongs to <em>you.</em></h2><p>Messages stay in this browser tab and are cleared when you clear them or close the tab. Notes are only saved to this device after you choose Save, and you can edit or delete them whenever you want.</p><button class="button button-outline" data-open-notes>Manage my notes <span>↗</span></button></div><div class="privacy-list"><div><span>01</span><p><strong>No account required</strong><small>Start with a conversation, not a sign-up.</small></p><b>✓</b></div><div><span>02</span><p><strong>Your chat stays in this tab</strong><small>It is not saved by the app.</small></p><b>✓</b></div><div><span>03</span><p><strong>Notes are opt-in</strong><small>Saved on this device, with your permission.</small></p><b>✓</b></div></div></section>
+
+    <section class="closing section-wrap"><div class="closing-light"></div><p class="eyebrow">WHENEVER YOU’RE READY</p><h2>You don’t have to<br>figure it out <em>alone.</em></h2><a class="button button-primary" href="#companion">Say hello to Baymax <span>↗</span></a><p class="closing-caption">A small step is still a step.</p><img src="assets/baymax_preview.png" alt="" loading="lazy"></section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span><span>BAYMAX<small>PERSONAL CARE COMPANION</small></span></a><p>Made with care by Team Hamada <span>✳</span></p><a href="#privacy">Privacy & safety <span>↗</span></a></footer>
+
+  <dialog id="checkinDialog" class="dialog"><form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close check-in">×</button></form><p class="eyebrow">A MOMENT FOR YOU</p><h2>Let’s check in.</h2><p class="dialog-lede">Share only what feels comfortable. You can skip anything.</p><form id="checkinForm" class="checkin-form"><label>How are you feeling today?<select id="moodSelect"><option value="">Choose if you like</option><option>Okay</option><option>A little low</option><option>Stressed</option><option>Uncomfortable</option><option>Not sure yet</option></select></label><label>What’s on your mind? <span>(optional)</span><textarea id="checkinText" rows="3" maxlength="1200" placeholder="Put it in your own words…"></textarea></label><label>How long has this been on your mind? <span>(optional)</span><select id="durationSelect"><option value="">Skip this question</option><option>Just today</option><option>A few days</option><option>A few weeks</option><option>Longer</option><option>Not sure</option></select></label><button class="button button-primary" type="submit">Continue to chat <span>↗</span></button><button class="skip-button" type="button" id="skipCheckin">Skip and just chat</button></form></dialog>
+
+  <dialog id="notesDialog" class="dialog notes-dialog"><form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close notes">×</button></form><p class="eyebrow">ONLY ON THIS DEVICE</p><h2>My care notes</h2><p class="dialog-lede">Write a summary or questions to take to a clinician. Nothing is saved until you choose Save notes.</p><label class="consent-row"><input id="notesConsent" type="checkbox"><span><strong>Save these notes locally on this device</strong><small>I understand anyone with access to this browser profile may be able to read them.</small></span></label><label class="notes-label" for="notesEditor">Your notes</label><textarea id="notesEditor" rows="8" maxlength="5000" placeholder="What would you like to remember or ask?"></textarea><div class="notes-meta"><span id="notesStatus" role="status">Notes are not saved.</span><span id="notesCount">0 / 5000</span></div><div class="notes-actions"><button class="button button-primary" id="saveNotes" type="button">Save notes</button><button class="button button-soft" id="copyNotes" type="button">Copy</button><button class="delete-button" id="deleteNotes" type="button">Delete saved notes</button></div><div class="summary-box"><h3>Prepare from this chat</h3><p>Creates an editable draft from what you said in this session. Review it before saving or copying.</p><button class="summary-button" id="prepareSummary" type="button">Create editable care summary <span>↗</span></button></div></dialog>
+
+  <dialog id="privacyDialog" class="dialog small-dialog"><form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close privacy details">×</button></form><p class="eyebrow">PRIVACY, IN PLAIN LANGUAGE</p><h2>What stays where?</h2><ul class="privacy-detail-list"><li><strong>Chat:</strong> held in this browser tab’s memory. The server does not write message content to logs.</li><li><strong>AI mode:</strong> if configured, messages are sent to the server and OpenAI to generate a reply. Don’t share anything you wouldn’t want processed for that request.</li><li><strong>Demo mode:</strong> no message is sent to an AI provider; the app shows a fixed sample reply.</li><li><strong>Notes:</strong> stored in this browser profile only after you check the consent box and save. Clear them in My notes.</li></ul><p class="dialog-warning">This demo is not a medical device, clinician, or emergency service. For immediate danger, contact local emergency services or a nearby trusted person.</p><button class="button button-primary" type="button" data-close-dialog>Got it</button></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

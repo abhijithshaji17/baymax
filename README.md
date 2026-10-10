@@ -1,4 +1,4 @@
-# DevDay Exchange Community Hackathon: Kochi
+# Baymax - personal healthcare companion
 
 A repository template for participants at the 10–11 October 2026 hackathon. It contains event rules and documentation scaffolding; build your project from scratch at the event.
 
@@ -27,30 +27,37 @@ Keep your approved Luma QR code ready for entry, and bring your laptop and charg
 4. Record meaningful changes in [CHANGELOG.md](CHANGELOG.md) and your Codex usage in [AI_USAGE.md](AI_USAGE.md). Commit after completed milestones; aim for a meaningful checkpoint about every 30 minutes.
 5. Complete [SUBMISSION.md](SUBMISSION.md) with your code repository, short project description, and working demo. Follow submission instructions announced by the organizers.
 
-This template has no application code or required technology stack. The documentation and commit cadence are repository workflow guidance; the event participation rules are in [RULES.md](RULES.md).
+This repository started as documentation scaffolding and now contains the Baymax MVP described below. The documentation and commit cadence are repository workflow guidance; the event participation rules are in [RULES.md](RULES.md).
 
-## Project overview — complete during the event
+## Project overview
 
-- **Project name:** TODO
-- **Short description:** TODO — what it does, who it helps, and why it matters.
-- **Team:** TODO — participant names and GitHub handles; maximum 4 members.
-- **Working demo:** TODO — link or local demo instructions.
-- **Technology stack:** TODO
+- **Project name:** Baymax — personal healthcare companion.
+- **Short description:** A supportive companion for everyday health conversations, optional check-ins, and preparing editable notes for a clinician.
+- **Team:** Team Hamada.
+- **Working demo:** Run locally using the steps below.
+- **Technology stack:** Node.js 22+, browser HTML/CSS/JavaScript, and the official OpenAI JavaScript SDK for optional server-side AI replies.
 
 ### Run the project
 
-Replace these placeholders with commands that actually work for your project:
+1. Install Node.js 22 or newer.
+2. Install the server dependency: `npm install`.
+3. Optional AI setup: copy `.env.example` to `.env` and add an `OPENAI_API_KEY`. Keep the key in `.env`; never add it to browser code or commit it. `OPENAI_MODEL` can be changed to a model available to your API project. With no key, the app runs in clearly labeled demo mode and returns a fixed sample reply.
+4. Start the local server: `npm start`.
+5. Open [http://127.0.0.1:3000](http://127.0.0.1:3000). Set `PORT` in `.env` to use another local port.
 
-1. Prerequisites and versions: TODO
-2. Dependency installation: TODO
-3. Environment setup: TODO — list required variable names and provide a sanitized `.env.example` if needed.
-4. Start the project: TODO
-5. Run checks or tests: TODO
+The app uses the supplied `assets/baymax_preview.png` in the experience and preserves the editable OBJ/MTL and Blender scene. Rebuild those model assets with `blender --background --python assets/build_baymax_scene.py` from the repository root.
 
 ### Current status
 
-- Working features: TODO
-- Known limitations: TODO
-- Libraries, APIs, and public datasets used: TODO — include source links and applicable attribution.
+- **Working features:** responsive San Fransokyo-inspired landing page; optional check-in; session-only chat with loading, error, and clear states; server-side OpenAI Responses API endpoint; fixed-reply demo mode without credentials; editable care-summary draft; opt-in local notes with consent, copy, and delete controls; privacy and safety explanations; reduced-motion support.
+- **Privacy behavior:** chat is kept in the current tab. When AI mode is active, messages are sent through the local server to OpenAI for the reply. Notes remain in browser local storage only after the user checks consent and saves. The server does not log message content. The demo has not undergone a security or clinical review and is not a medical device, clinician, diagnosis, or emergency service.
+- **Known limitations:** no user accounts, encrypted cloud sync, clinician integration, emergency detection, or medical-record storage. Demo mode is illustrative and does not generate a personalized AI response. The experience uses local system fonts and requests no third-party font files.
+- **Libraries and APIs:** [OpenAI JavaScript SDK and API quickstart](https://developers.openai.com/api/docs/quickstart); Responses API. No public datasets are used.
 
 See [AI_USAGE.md](AI_USAGE.md) for AI assistance and [CHANGELOG.md](CHANGELOG.md) for the development record.
+
+## Baymax 3D model
+
+`assets/baymax.obj` is a smooth, stylized character mesh with `assets/baymax.mtl` materials. Import the OBJ into Blender or another OBJ-compatible 3D editor.
+
+To recreate the Blender project, OBJ export, and preview, run `blender --background --python assets/build_baymax_scene.py` from the repository root. The script builds the upright character and writes `assets/baymax.blend`, `assets/baymax.obj`, `assets/baymax.mtl`, and `assets/baymax_preview.png`. The scene was generated and rendered with Blender 5.2.2; no Blender MCP connection was available, so Blender was run locally.

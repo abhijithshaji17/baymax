@@ -1,0 +1,22 @@
+{
+  "name": "baymax",
+  "version": "1.0.0",
+  "description": "A private-first healthcare companion demo inspired by Baymax.",
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": { "start": "node --env-file-if-exists=.env server.mjs" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhijithshaji17/baymax.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhijithshaji17/baymax/issues"
+  },
+  "homepage": "https://github.com/abhijithshaji17/baymax#readme",
+  "dependencies": {
+    "openai": "^7.32.0"
+  }
+}
