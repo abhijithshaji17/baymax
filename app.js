@@ -28,6 +28,15 @@ function toast(message) {
   toastTimer = setTimeout(() => el.classList.remove('show'), 2600);
 }
 
+async function readApiJson(response) {
+  const contentType = response.headers.get('content-type') || '';
+  if (!/json/i.test(contentType)) {
+    throw new Error(`The chat service returned a web page instead of data (HTTP ${response.status}). Start Baymax with “npm start” and open http://127.0.0.1:3000.`);
+  }
+  try { return await response.json(); }
+  catch { throw new Error('The chat service sent an invalid response. Restart Baymax with “npm start” and try again.'); }
+}
+
 function addMessage(role, text) {
   const row = document.createElement('div');
   row.className = `message-row ${role === 'user' ? 'user' : 'assistant'}`;
@@ -80,7 +89,7 @@ async function sendMessage(rawText) {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ messages: conversation.slice(-8) })
     });
-    const data = await response.json();
+    const data = await readApiJson(response);
     if (!response.ok) throw new Error(data.error || 'Baymax could not reply. Please try again.');
     if (data.mode) setMode(data.mode);
     const reply = String(data.reply || '').trim();
@@ -97,17 +106,20 @@ function setMode(mode) {
   const pill = document.querySelector('#modePill');
   const label = document.querySelector('#modeLabel');
   const isLive = mode === 'ai';
+  const isUnavailable = mode === 'offline';
   pill.classList.toggle('live', isLive);
-  label.textContent = isLive ? 'AI mode · key configured' : 'Demo mode · sample replies';
-  document.querySelector('#dashboardMode').textContent = isLive ? 'AI MODE' : 'DEMO MODE';
+  pill.classList.toggle('offline', isUnavailable);
+  label.textContent = isLive ? 'AI mode · key configured' : isUnavailable ? 'Chat service unavailable' : 'Demo mode · sample replies';
+  document.querySelector('#dashboardMode').textContent = isLive ? 'AI MODE' : isUnavailable ? 'OFFLINE' : 'DEMO MODE';
 }
 
 async function loadMode() {
   try {
     const res = await fetch('/api/status');
-    const data = await res.json();
+    const data = await readApiJson(res);
+    if (!res.ok) throw new Error(data.error || 'Status unavailable.');
     setMode(data.mode);
-  } catch { setMode('demo'); }
+  } catch { setMode('offline'); }
 }
 
 chatForm.addEventListener('submit', event => {

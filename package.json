@@ -4,7 +4,11 @@
   "description": "A private-first healthcare companion demo inspired by Baymax.",
   "type": "module",
   "main": "server.mjs",
-  "scripts": { "start": "node --env-file-if-exists=.env server.mjs" },
+  "engines": { "node": "22.x" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "vercel:dev": "vercel dev"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/abhijithshaji17/baymax.git"

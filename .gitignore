@@ -12,6 +12,7 @@ node_modules/
 dist/
 build/
 coverage/
+.vercel/
 .venv/
 venv/
 __pycache__/

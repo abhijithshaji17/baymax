@@ -43,7 +43,17 @@ This repository started as documentation scaffolding and now contains the Baymax
 2. Install the server dependency: `npm install`.
 3. Optional AI setup: copy `.env.example` to `.env` and add an `OPENAI_API_KEY`. Keep the key in `.env`; never add it to browser code or commit it. `OPENAI_MODEL` can be changed to a model available to your API project. With no key, the app runs in clearly labeled demo mode and returns a fixed sample reply.
 4. Start the local server: `npm start`.
-5. Open [http://127.0.0.1:3000](http://127.0.0.1:3000). Set `PORT` in `.env` to use another local port.
+5. Open the URL printed by `npm start` (normally [http://127.0.0.1:3000](http://127.0.0.1:3000)). Use the Node server URL rather than opening `index.html` directly; the server provides the `/api` routes the chat needs. If the selected port is busy, the server automatically tries the next one. Set `PORT` in `.env` to choose a starting port.
+
+### Deploy on Vercel
+
+The frontend is served as static files, and the `/api` directory contains Vercel Node.js Functions for chat and status. Vercel detects functions in this directory automatically; `vercel.json` selects the “Other” framework preset.
+
+1. Import this repository into Vercel, or run `npx vercel` from the project root and follow its prompts.
+2. In the Vercel project’s **Settings → Environment Variables**, add `OPENAI_API_KEY` for the environments you plan to deploy (Production, Preview, and/or Development). Add `OPENAI_MODEL` only if you want to override the default model. Keep these values in Vercel’s environment settings; do not commit `.env`.
+3. Deploy a preview first. When it works, deploy to production from the Vercel dashboard or run `npx vercel --prod`.
+
+Without `OPENAI_API_KEY`, the deployed API stays in clearly labeled demo mode with a fixed sample reply. Vercel ignores local `.env` files through `.vercelignore`.
 
 The app uses the supplied `assets/baymax_preview.png` in the experience and preserves the editable OBJ/MTL and Blender scene. Rebuild those model assets with `blender --background --python assets/build_baymax_scene.py` from the repository root.
 

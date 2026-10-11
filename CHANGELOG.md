@@ -4,6 +4,27 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-11T08:03:11+05:30 — Prepare Baymax for Vercel
+
+- Changed: Added Vercel Node.js Functions for `/api/chat` and `/api/status`, extracted the shared chat logic for both Vercel and local serving, added Vercel project configuration and upload ignores, pinned Node 22, and documented deployment and environment setup. Updated `api/`, `lib/`, `server.mjs`, `vercel.json`, `.vercelignore`, `.gitignore`, `package.json`, `package-lock.json`, and `README.md`.
+- Why: Deploy the static frontend and working chat API together on Vercel.
+- Validation: `node --check` passed for the local server, both Vercel functions, and shared chat service. `package.json`, `package-lock.json`, and `vercel.json` parsed successfully. `npx --yes vercel --version` did not complete because CLI package access stalled, so deployment could not be started.
+- Limitations: Deployment still requires Vercel CLI/account access. AI replies require adding `OPENAI_API_KEY` to Vercel project environment variables; local `.env` is excluded from uploads.
+
+## 2026-10-11T07:52:38+05:30 — Start on the next free port when the preferred port is busy
+
+- Changed: When the configured port is already occupied, the server now tries subsequent ports and logs the actual URL it bound to. Updated `server.mjs` and the local run instructions in `README.md`.
+- Why: Avoid an `EADDRINUSE` crash when another local service is already using port 3000.
+- Validation: `node --check server.mjs` and `git diff --check` passed. Started the app successfully on port 3002 after 3000 and 3001 were occupied.
+- Limitations: None known.
+
+## 2026-10-11T07:47:30+05:30 — Handle non-JSON chat responses clearly
+
+- Changed: Check API response content types before parsing, show an actionable message when a web page is returned instead of JSON, and mark the service offline rather than silently claiming demo mode when status checks fail. Updated `app.js` and `dashboard.css`.
+- Why: Prevent the raw `Unexpected token '<'` parse error and identify when the page is being served without Baymax’s `/api` backend.
+- Validation: `node --check app.js` and `git diff --check` passed.
+- Limitations: Chat requires the Node server; static hosting without an API deployment cannot provide replies.
+
 ## 2026-10-11T07:44:46+05:30 — Raise the opening eyes and greeting
 
 - Changed: Moved the eyes and greeting upward slightly, keeping the greeting below the eyes.
