@@ -4,6 +4,34 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-11T07:31:59+05:30 — Redesign the Baymax experience around an opening greeting
+
+- Changed: Replaced the dashboard visual system with a warm editorial palette, serif display typography, a full-screen Baymax eyes opening built from the supplied image, and a scroll-led introduction before the care dashboard. Restyled navigation, chat, dialogs, privacy details, and mobile layouts while preserving the existing interactions. Updated `index.html`, `dashboard.css`, `app.js`, and `assets/baymax-eyes-opening.png`.
+- Why: Give the app a more distinctive, premium introduction and a calmer visual language across the full experience.
+- Validation: `node --check app.js` and `git diff --check` passed. Tried to inspect the local preview in the in-app browser, but the workspace denied loopback socket access before the page could load.
+- Limitations: Visual browser review, including a phone-sized view, remains unverified. The serif typeface uses local system fallbacks.
+
+## 2026-10-11T06:58:00+05:30 — Use the supplied Baymax art in the opening background
+
+- Changed: Added the supplied portrait artwork at assets/baymax_initial_background.png and placed it on the opening hero background, with a dark blue blend behind the dashboard controls.
+- Why: Carry the requested Baymax greeting artwork into the initial screen.
+- Validation: Reloaded and inspected the 1265 px browser preview; confirmed the image asset is served and the existing dashboard controls remain visible.
+- Limitations: A phone-sized crop was not directly inspected.
+
+## 2026-10-11T05:29:16+05:30 — Remove repeated wellness copy from the landing
+
+- Changed: Removed the duplicate marketing sections, rewrote the dashboard around check-ins, notes, visit preparation, privacy, and urgent help, clarified the AI data flow, and replaced decorative chat sparkles with the Baymax face mark. Reworked the dashboard stylesheet for a simpler, more consistent layout.
+- Why: Respond to feedback that the experience felt generic and AI-generated; make each section describe a real feature or a clear safety boundary.
+- Validation: Inspected the revised landing in the browser at 1265 px; JavaScript syntax checks and diff whitespace checks passed. Confirmed the local environment file remains git-ignored.
+- Limitations: A phone-sized layout was not directly inspected.
+
+## 2026-10-11T04:27:45+05:30 — Refine the dashboard after visual review
+
+- Changed: Removed the duplicate Baymax card, stripped decorative all-caps labels, replaced character glyphs with consistent line icons, simplified card copy, and adjusted spacing and text sizes in `index.html` and `dashboard.css`.
+- Why: Make the first screen feel focused and legible while keeping the supplied Baymax render as the single hero visual.
+- Validation: Reloaded and inspected the landing page at the available 732 px browser viewport. `node --check app.js`, `node --check server.mjs`, and `git diff --check` passed.
+- Limitations: A wide desktop and 390 px phone-sized render were not available for direct visual inspection.
+
 ## 2026-10-11T03:56:04+05:30 — Redesign the landing as a Baymax care dashboard
 
 - Changed: Replaced the former story-first hero with a dark San Fransokyo dashboard inspired by the supplied layout: compact icon rail, centered greeting, direct ask box, glass action cards, and a prominent Baymax companion card. Added dashboard shortcuts for check-ins, notes, care preparation, and privacy; added a bottom icon rail at narrow widths; made the demo-mode label visible; and moved Baymax below the header text. Updated responsive styling in `dashboard.css` while preserving the lower story and chat experience.

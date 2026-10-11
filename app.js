@@ -10,6 +10,16 @@ const conversation = [];
 const STORAGE_KEY = 'baymax-care-notes-v1';
 let toastTimer;
 
+const openingScreen = document.querySelector('.opening-screen');
+if (openingScreen && 'IntersectionObserver' in window) {
+  const openingObserver = new IntersectionObserver(([entry]) => {
+    document.body.classList.toggle('opening-active', entry.isIntersecting);
+  }, { threshold: 0.08 });
+  openingObserver.observe(openingScreen);
+} else {
+  document.body.classList.remove('opening-active');
+}
+
 function toast(message) {
   const el = document.querySelector('#toast');
   el.textContent = message;
@@ -24,7 +34,15 @@ function addMessage(role, text) {
   const avatar = document.createElement('div');
   avatar.className = 'message-avatar';
   avatar.setAttribute('aria-hidden', 'true');
-  avatar.textContent = role === 'user' ? 'YOU' : '✳';
+  if (role === 'user') {
+    avatar.textContent = 'YOU';
+  } else {
+    avatar.setAttribute('aria-hidden', 'true');
+    const face = document.createElement('span');
+    face.className = 'baymax-face';
+    face.append(document.createElement('i'), document.createElement('i'), document.createElement('b'));
+    avatar.append(face);
+  }
   const content = document.createElement('div');
   content.className = 'message-content';
   const name = document.createElement('p');
@@ -125,7 +143,7 @@ document.querySelector('#clearChat').addEventListener('click', () => {
   conversation.length = 0;
   messages.replaceChildren();
   const welcome = document.createElement('div'); welcome.className = 'welcome-message';
-  welcome.innerHTML = '<div class="message-avatar" aria-hidden="true">✳</div><div class="message-content"><p class="message-name">Baymax <span>JUST NOW</span></p><div class="message-bubble">Hello. I’m Baymax, your personal healthcare companion. What would you like to talk about today?</div></div>';
+  welcome.innerHTML = '<div class="message-avatar" aria-hidden="true"><span class="baymax-face"><i></i><i></i><b></b></span></div><div class="message-content"><p class="message-name">Baymax <span>READY</span></p><div class="message-bubble">Hello. I’m Baymax, your personal healthcare companion. What health question can I help you organize?</div></div>';
   messages.append(welcome); toast('This conversation was cleared from the tab.');
 });
 
