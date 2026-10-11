@@ -4,6 +4,20 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-11T07:41:51+05:30 — Center the eyes in the opening screen
+
+- Changed: Shifted the animated eye mark to the visual center of the opening screen.
+- Why: Match the requested composition.
+- Validation: `git diff --check` passed.
+- Limitations: Visual browser review remains unavailable because local loopback access is denied.
+
+## 2026-10-11T07:40:25+05:30 — Fit the greeting into the opening and animate Baymax’s eyes
+
+- Changed: Added the greeting to the opening screen in responsive serif type and animated the eyes with a gentle blink. Reworked the next scroll section to continue the introduction without repeating the greeting.
+- Why: Make the opening feel complete at first glance while giving Baymax a small, expressive detail.
+- Validation: `node --check app.js` and `git diff --check` passed.
+- Limitations: Browser rendering still cannot be visually checked in this workspace because local loopback access is denied.
+
 ## 2026-10-11T07:31:59+05:30 — Redesign the Baymax experience around an opening greeting
 
 - Changed: Replaced the dashboard visual system with a warm editorial palette, serif display typography, a full-screen Baymax eyes opening built from the supplied image, and a scroll-led introduction before the care dashboard. Restyled navigation, chat, dialogs, privacy details, and mobile layouts while preserving the existing interactions. Updated `index.html`, `dashboard.css`, `app.js`, and `assets/baymax-eyes-opening.png`.

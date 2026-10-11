@@ -48,7 +48,15 @@ a { color: inherit; text-decoration: none; }
 
 /* The opening is intentionally quiet: the face mark leads before the greeting. */
 .opening-screen { width: calc(100% + 224px); margin-left: -224px; height: min(100svh, 1000px); min-height: 600px; position: relative; display: grid; place-items: center; overflow: hidden; background: #050606; color: white; }
-.opening-eyes { position: absolute; inset: 0; background: #050606 url("assets/baymax-eyes-opening.png") center 50% / cover no-repeat; }
+.opening-eyes { position: absolute; inset: 0; background: #050606; }
+.opening-eyes svg { width: 100%; height: 100%; display: block; }
+.eye-bridge { fill: none; stroke: #fff; stroke-width: 4; }
+.eye { fill: #fff; transform-box: fill-box; transform-origin: center; animation: baymax-blink 5.4s infinite; }
+.eye-right { animation-delay: .05s; }
+@keyframes baymax-blink { 0%, 88%, 96%, 100% { transform: scaleY(1); } 91%, 93% { transform: scaleY(.08); } }
+.opening-copy { position: absolute; z-index: 1; left: 22px; right: 22px; bottom: 15%; color: #fff; text-align: center; text-shadow: 0 2px 24px #000; }
+.opening-copy p { margin: 0; font: 400 clamp(35px, 5.4vw, 68px)/1.12 var(--serif); letter-spacing: -.035em; }
+.opening-copy span { display: block; margin-top: 8px; color: rgba(255,255,255,.76); font: 400 clamp(15px, 2vw, 22px)/1.4 var(--serif); letter-spacing: .005em; }
 .opening-scroll { position: absolute; left: 50%; bottom: 31px; transform: translateX(-50%); display: flex; align-items: center; gap: 11px; color: rgba(255,255,255,.68); font-size: 8px; letter-spacing: .2em; white-space: nowrap; }
 .opening-scroll span { width: 30px; height: 1px; background: #c5e4d7; }
 .intro-message { min-height: 540px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 90px 24px 100px; text-align: center; }
@@ -240,7 +248,9 @@ a { color: inherit; text-decoration: none; }
   .header-mode { display: none; }
   .section-wrap, .site-footer { width: calc(100% - 38px); }
   .opening-screen { width: 100%; margin-left: 0; height: 100svh; min-height: 570px; }
-  .opening-eyes { background-size: auto 100%; background-position: center 50%; }
+  .opening-copy { bottom: 17%; }
+  .opening-copy p { font-size: clamp(36px, 9vw, 52px); }
+  .opening-copy span { font-size: clamp(15px, 4vw, 19px); }
   .opening-scroll { bottom: 27px; font-size: 7px; }
   .intro-message { min-height: 510px; padding: 72px 22px 80px; }
   .intro-message .eyebrow { font-size: 8px; }
