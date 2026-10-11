@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-11T07:44:46+05:30 — Raise the opening eyes and greeting
+
+- Changed: Moved the eyes and greeting upward slightly, keeping the greeting below the eyes.
+- Why: Match the requested opening composition.
+- Validation: `git diff --check` passed.
+- Limitations: Visual browser review remains unavailable because local loopback access is denied.
+
 ## 2026-10-11T07:41:51+05:30 — Center the eyes in the opening screen
 
 - Changed: Shifted the animated eye mark to the visual center of the opening screen.
