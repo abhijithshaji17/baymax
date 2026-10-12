@@ -3,97 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0f0d">
-  <meta name="description" content="Baymax is a calm, private companion for everyday health conversations and preparing for care.">
-  <title>Baymax — personal healthcare companion</title>
+  <meta name="theme-color" content="#050606">
+  <meta name="description" content="Baymax is your personal healthcare companion.">
+  <title>Baymax</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/baymax-mark.svg">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="dashboard.css">
-  <script src="app.js" defer></script>
 </head>
-<body class="opening-active">
-  <div class="sky" aria-hidden="true"><div class="skyline skyline-back"></div><div class="skyline skyline-front"></div><div class="stars"></div></div>
-  <aside class="app-rail" aria-label="Baymax dashboard">
-    <a class="rail-brand" href="#home" aria-label="Baymax home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span><span class="rail-brand-name">BAYMAX<small>CARE</small></span></a>
-    <div class="rail-divider"></div>
-    <nav class="rail-nav" aria-label="Dashboard navigation">
-      <a class="rail-item is-active" href="#home" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 10 8-6 8 6v9a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
-      <button class="rail-item" data-open-checkin aria-label="Check-in" title="Check-in"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg><span>Check-in</span></button>
-      <a class="rail-item" href="#companion" aria-label="Chat with Baymax" title="Chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 9 9 0 0 1-4-.9L4 20l1-4a7.5 7.5 0 1 1 15-4.5Z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg><span>Chat</span></a>
-      <button class="rail-item" data-open-notes aria-label="My notes" title="My notes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10a2 2 0 0 1 2 2v14H5V6a2 2 0 0 1 2-2Z"/><path d="M9 4V2h6v2M8 9h8M8 13h8M8 17h5"/></svg><span>Notes</span></button>
-      <a class="rail-item" href="#privacy" aria-label="Privacy" title="Privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5-3.3 8.2-8 10-4.7-1.8-8-5-8-10V6z"/><path d="m9 12 2 2 4-4"/></svg><span>Privacy</span></a>
-    </nav>
-    <button class="rail-help" data-open-privacy aria-label="Safety and privacy details" title="Safety and privacy">?</button>
-  </aside>
-  <div class="app-content">
-  <header class="site-header dashboard-header">
-    <div class="dash-greeting"><h1>What can I help with?</h1><p>Health questions, a check-in, or visit prep.</p></div>
-    <div class="profile-tools"><button class="quick-add" data-open-checkin aria-label="Start a new check-in" title="New check-in">+</button><button class="guest-profile" data-open-privacy><span class="header-shield" aria-hidden="true">◇</span><span>Privacy<small>Read how it works</small></span></button><span class="header-mode" id="dashboardMode">DEMO MODE</span></div>
-  </header>
-
+<body>
   <main>
-    <section class="opening-screen" aria-label="Baymax">
+    <section class="opening-screen" id="baymax-opening" aria-label="Baymax">
       <div class="opening-eyes" role="img" aria-label="Baymax's eyes">
         <svg viewBox="0 0 576 1280" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
           <rect width="576" height="1280" fill="#050606"/>
           <g class="eyes-mark" transform="translate(6 80)">
-            <path class="eye-bridge" d="M193 504h177"/>
-            <circle class="eye eye-left" cx="162" cy="504" r="31"/>
-            <circle class="eye eye-right" cx="401" cy="504" r="31"/>
+            <g class="eyes-settle">
+              <path class="eye-bridge" pathLength="177" d="M193 504h177"/>
+              <circle class="eye-glow eye-glow-left" cx="162" cy="504" r="31"/>
+              <circle class="eye-glow eye-glow-right" cx="401" cy="504" r="31"/>
+              <g class="eye-blink"><circle class="eye eye-left" cx="162" cy="504" r="31"/></g>
+              <g class="eye-blink"><circle class="eye eye-right" cx="401" cy="504" r="31"/></g>
+            </g>
           </g>
         </svg>
       </div>
-      <div class="opening-copy"><p>Hi, I’m Baymax.</p><span>Your personal healthcare companion.</span></div>
-      <a class="opening-scroll" href="#baymax-intro"><span></span> SCROLL TO BEGIN</a>
+      <div class="opening-copy"><p>Hi, I’m Baymax.</p><span>Your personal healthcare companion</span></div>
+      <nav class="opening-menu" aria-label="Baymax quick menu">
+        <a href="#baymax-opening">Chat<span aria-hidden="true">↗</span></a>
+      </nav>
     </section>
-
-    <section class="intro-message section-wrap" id="baymax-intro">
-      <p class="eyebrow">YOUR PERSONAL HEALTHCARE COMPANION</p>
-      <h2>A calm place<br><span>to start.</span></h2>
-      <p class="intro-support">I’m here to listen, help you sort through a health question, or get ready for a conversation with your clinician.</p>
-      <a class="intro-continue" href="#home">Let’s begin <span>↓</span></a>
-    </section>
-
-    <section class="dashboard-hero section-wrap" id="home">
-      <div class="dashboard-backdrop" aria-hidden="true"></div>
-      <div class="dashboard-welcome">
-        <form class="quick-ask" id="quickAskForm"><label class="sr-only" for="quickAskInput">Ask Baymax a health question</label><textarea id="quickAskInput" rows="1" maxlength="2000" placeholder="Ask a health question…" required></textarea><button type="submit" aria-label="Send to Baymax">↗</button></form>
-        <div class="quick-prompts"><button type="button" data-quick-ask="Help me prepare for a clinician visit.">Prepare for a clinician visit</button><button type="button" data-quick-ask="I want to talk through how I’m feeling.">Talk through how I feel</button></div>
-      </div>
-      <div class="dashboard-grid" aria-label="Your Baymax care dashboard">
-        <article class="dash-card dash-check"><div class="dash-card-top"><span class="dash-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5s1.3 1.7 3.5 1.7 3.5-1.7 3.5-1.7M9 9.5h.01M15 9.5h.01"/></svg></span><span class="dash-label">Check in</span></div><h2>How are you<br>feeling today?</h2><div class="mood-chips"><button type="button" data-mood="Okay">Okay</button><button type="button" data-mood="Stressed">Stressed</button><button type="button" data-mood="Not sure yet">Not sure</button></div><button class="dash-link" data-open-checkin>Start a check-in <span>↗</span></button></article>
-        <article class="dash-card dash-notes"><div class="dash-card-top"><span class="dash-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20H7a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2Z"/><path d="M14 3.5v4h4M9 12h6M9 15.5h6"/></svg></span><span class="dash-label">Notes</span></div><h2>Write a note<br>for later.</h2><p>Save it on this device only when you choose.</p><button class="dash-link" data-open-notes>Open notes <span>↗</span></button></article>
-        <article class="dash-card dash-prep"><div class="dash-card-top"><span class="dash-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-8-4.7-8-10a4.4 4.4 0 0 1 8-2.4A4.4 4.4 0 0 1 20 10c0 5.3-8 10-8 10Z"/><path d="M8 12h2l1-2 2 4 1-2h2"/></svg></span><span class="dash-label">Visit prep</span></div><h2>Prepare for<br>a clinician visit.</h2><p>Make an editable summary and questions from this chat.</p><button class="dash-link" data-open-notes data-prepare-summary>Build a visit summary <span>↗</span></button></article>
-      </div>
-      <aside class="urgent-note" aria-label="Urgent health guidance"><strong>If you may be in immediate danger</strong><span>Contact local emergency services or go to an emergency department. Reach someone you trust nearby.</span></aside>
-      <a class="scroll-hint" href="#companion"><span></span> GO TO CHAT</a>
-    </section>
-
-    <section class="companion section-wrap" id="companion">
-      <div class="companion-heading"><div><p class="eyebrow">BAYMAX · HEALTHCARE COMPANION</p><h2>Talk with Baymax.</h2></div><div class="mode-pill" id="modePill"><span class="mode-dot"></span><span id="modeLabel">Checking connection…</span></div></div>
-      <div class="care-note"><span class="care-note-icon" aria-hidden="true">i</span><p><strong>About this chat</strong><br>Baymax provides general information and can help organize questions. It cannot diagnose, prescribe, or replace a clinician.</p></div>
-      <div class="chat-shell">
-        <aside class="chat-aside"><div class="aside-avatar"><img src="assets/baymax_preview.png" alt="" loading="lazy"></div><p class="aside-name">Baymax <span class="online-status"><i></i> Here with you</span></p><p class="aside-copy">Ask a general health question or prepare for a clinician visit.</p><div class="aside-divider"></div><p class="suggest-label">Try asking</p><button class="starter" data-starter="I've been feeling a bit stressed lately.">I’ve been feeling stressed</button><button class="starter" data-starter="Help me prepare for a conversation with my clinician.">Prepare for a visit</button><button class="starter" data-starter="I have a general health question.">Ask a general question</button><button class="clear-chat" id="clearChat">Clear this conversation</button></aside>
-        <div class="chat-main"><div class="chat-topbar"><div class="chat-top-title"><span class="mobile-bot-mark" aria-hidden="true"><i></i><i></i><b></b></span><span><strong>Chat with Baymax</strong><small>Conversation held in this tab</small></span></div><button id="chatHelp" class="help-button" aria-label="Read safety information" title="Safety information">ⓘ</button></div>
-          <div class="messages" id="messages" role="log" aria-live="polite" aria-relevant="additions text"><div class="welcome-message"><div class="message-avatar" aria-hidden="true"><span class="baymax-face"><i></i><i></i><b></b></span></div><div class="message-content"><p class="message-name">Baymax <span>READY</span></p><div class="message-bubble">Hello. I’m Baymax, your personal healthcare companion. What health question can I help you organize?</div></div></div></div>
-          <div class="typing-indicator" id="typingIndicator" hidden><span class="typing-dots"><i></i><i></i><i></i></span> Baymax is thinking…</div>
-          <form class="composer" id="chatForm"><label class="sr-only" for="chatInput">Write a message to Baymax</label><textarea id="chatInput" rows="1" maxlength="2000" placeholder="Share what’s on your mind…" required></textarea><div class="composer-bottom"><span>Enter to send · Shift + Enter for a new line</span><button class="send-button" id="sendButton" aria-label="Send message"><span>Send</span><b>↑</b></button></div></form>
-          <p class="chat-footnote">Your conversation is only kept in this tab. <button id="chatPrivacy">How privacy works</button></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="privacy section-wrap" id="privacy"><div class="privacy-mark">◈</div><div class="privacy-copy"><p class="eyebrow">PRIVACY</p><h2>How your information is handled.</h2><p>The app keeps chat history only in the open tab. If AI mode is on, your messages are sent to OpenAI to generate a reply. Notes are saved on this device only when you choose Save, and you can edit or delete them at any time.</p><button class="button button-outline" data-open-notes>Manage my notes <span>↗</span></button></div><div class="privacy-list"><div><span>01</span><p><strong>No account required</strong><small>Use the demo without signing up.</small></p><b>✓</b></div><div><span>02</span><p><strong>Chat stays in this tab</strong><small>The app does not save chat history.</small></p><b>✓</b></div><div><span>03</span><p><strong>Notes are opt-in</strong><small>Saved here only after you choose Save.</small></p><b>✓</b></div></div></section>
-
-
   </main>
-  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span><span>BAYMAX<small>HEALTHCARE COMPANION</small></span></a><p>Team Hamada · Hackathon demo</p><a href="#privacy">Privacy & safety <span>↗</span></a></footer>
-  </div>
-
-  <dialog id="checkinDialog" class="dialog"><form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close check-in">×</button></form><p class="eyebrow">A MOMENT FOR YOU</p><h2>Let’s check in.</h2><p class="dialog-lede">Share only what feels comfortable. You can skip anything.</p><form id="checkinForm" class="checkin-form"><label>How are you feeling today?<select id="moodSelect"><option value="">Choose if you like</option><option>Okay</option><option>A little low</option><option>Stressed</option><option>Uncomfortable</option><option>Not sure yet</option></select></label><label>What’s on your mind? <span>(optional)</span><textarea id="checkinText" rows="3" maxlength="1200" placeholder="Put it in your own words…"></textarea></label><label>How long has this been on your mind? <span>(optional)</span><select id="durationSelect"><option value="">Skip this question</option><option>Just today</option><option>A few days</option><option>A few weeks</option><option>Longer</option><option>Not sure</option></select></label><button class="button button-primary" type="submit">Continue to chat <span>↗</span></button><button class="skip-button" type="button" id="skipCheckin">Skip and just chat</button></form></dialog>
-
-  <dialog id="notesDialog" class="dialog notes-dialog"><form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close notes">×</button></form><p class="eyebrow">ONLY ON THIS DEVICE</p><h2>My care notes</h2><p class="dialog-lede">Write a summary or questions to take to a clinician. Nothing is saved until you choose Save notes.</p><label class="consent-row"><input id="notesConsent" type="checkbox"><span><strong>Save these notes locally on this device</strong><small>I understand anyone with access to this browser profile may be able to read them.</small></span></label><label class="notes-label" for="notesEditor">Your notes</label><textarea id="notesEditor" rows="8" maxlength="5000" placeholder="What would you like to remember or ask?"></textarea><div class="notes-meta"><span id="notesStatus" role="status">Notes are not saved.</span><span id="notesCount">0 / 5000</span></div><div class="notes-actions"><button class="button button-primary" id="saveNotes" type="button">Save notes</button><button class="button button-soft" id="copyNotes" type="button">Copy</button><button class="delete-button" id="deleteNotes" type="button">Delete saved notes</button></div><div class="summary-box"><h3>Prepare from this chat</h3><p>Creates an editable draft from what you said in this session. Review it before saving or copying.</p><button class="summary-button" id="prepareSummary" type="button">Create editable care summary <span>↗</span></button></div></dialog>
-
-  <dialog id="privacyDialog" class="dialog small-dialog"><form method="dialog" class="dialog-close-form"><button class="dialog-close" aria-label="Close privacy details">×</button></form><p class="eyebrow">PRIVACY, IN PLAIN LANGUAGE</p><h2>What stays where?</h2><ul class="privacy-detail-list"><li><strong>Chat:</strong> held in this browser tab’s memory. The server does not write message content to logs.</li><li><strong>AI mode:</strong> if configured, messages are sent to the server and OpenAI to generate a reply. Don’t share anything you wouldn’t want processed for that request.</li><li><strong>Demo mode:</strong> no message is sent to an AI provider; the app shows a fixed sample reply.</li><li><strong>Notes:</strong> stored in this browser profile only after you check the consent box and save. Clear them in My notes.</li></ul><p class="dialog-warning">This demo is not a medical device, clinician, or emergency service. For immediate danger, contact local emergency services or a nearby trusted person.</p><button class="button button-primary" type="button" data-close-dialog>Got it</button></dialog>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

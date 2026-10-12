@@ -4,6 +4,41 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-12T18:47:30+05:30 — Keep only Baymax's opening section
+
+- Changed: Removed the dashboard, chat, privacy, footer, dialogs, and app chrome so the opening screen is the only page section. Expanded it to fill the viewport in `index.html` and `dashboard.css`.
+- Why: Keep the page focused on Section 1 as requested.
+- Validation: `git diff --check` passed. Browser visual review remains pending.
+- Limitations: The Chat pill remains as a visual menu link; its companion section has been removed.
+
+## 2026-10-12T18:37:24+05:30 — Add a compact glass Chat link to Baymax's opening
+
+- Changed: Added a compact, translucent rounded pill at the bottom of the Baymax opening screen with a single Chat link to the companion section in `index.html` and `dashboard.css`.
+- Why: Make the opening screen's next steps easy to reach while matching the supplied soft grey-white glass reference.
+- Validation: `git diff --check` passed. Browser visual review remains pending.
+- Limitations: None known.
+
+## 2026-10-12T16:09:30+05:30 — Use the Baymax eyes as the browser icon
+
+- Changed: Added a black and white SVG favicon based on the supplied Baymax eyes mark and linked it from `index.html`.
+- Why: Carry the site's recognizable face mark into the browser tab and bookmarks.
+- Validation: `git diff --check` passed. Browser-tab icon refresh has not been visually reviewed.
+- Limitations: Browsers may cache favicons until the page is reloaded or the cache expires.
+
+## 2026-10-12T16:00:21+05:30 — Add a calm Baymax blink
+
+- Changed: Added a synchronized, restrained blink loop to both eyes after the awakening, with blinking disabled under reduced-motion settings. Updated `index.html` and `dashboard.css`.
+- Why: Make Baymax feel gently present after powering on.
+- Validation: `git diff --check` passed. Visual browser review remains pending.
+- Limitations: The blink animation has not been visually reviewed across browsers.
+
+## 2026-10-12T15:55:07+05:30 — Add Baymax awakening intro
+
+- Changed: Replaced the static opening eyes and immediate greeting with a timed power-on sequence, sequential eye illumination, a connecting line draw, restrained settle, and delayed heading/subtitle reveals. Removed the opening scroll prompt. Updated `index.html` and `dashboard.css`.
+- Why: Give the first section a quiet cinematic awakening while retaining the recognizable face and existing page content.
+- Validation: `git diff --check` passed. Visual browser review and motion timing review remain pending.
+- Limitations: No audio was added; the sequence works silently and reduced-motion preferences show the complete composition without animation.
+
 ## 2026-10-11T08:03:11+05:30 — Prepare Baymax for Vercel
 
 - Changed: Added Vercel Node.js Functions for `/api/chat` and `/api/status`, extracted the shared chat logic for both Vercel and local serving, added Vercel project configuration and upload ignores, pinned Node 22, and documented deployment and environment setup. Updated `api/`, `lib/`, `server.mjs`, `vercel.json`, `.vercelignore`, `.gitignore`, `package.json`, `package-lock.json`, and `README.md`.
