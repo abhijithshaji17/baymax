@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-13T00:12:09+05:30 — Remove the Section 01 kicker and scroll cue
+
+- Changed: Cleared the “BAYMAX / SECTION 01 — FIRST CONTACT” kicker and “SCROLL TO PLAY” cue from `index.html`.
+- Why: Simplify the opening section as requested.
+- Validation: `git diff --check` passed.
+- Limitations: Browser visual review remains pending.
+
 ## 2026-10-12T22:51:33+05:30 — Rename the opening pill to Chat
 
 - Changed: Renamed the Baymax opening pill from “Section 01” to “Chat” in `index.html`; retained its existing Section 01 link.
