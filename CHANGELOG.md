@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-12T22:18:48+05:30 — Put Section 01 first and restore the title font
+
+- Changed: Moved the cinematic chapter before Baymax's greeting and restored the source Figma Hand typeface for “OUCH” using a locally bundled TrueType font file. Added local TTF MIME support and updated the README.
+- Why: Follow the requested page order and preserve the original title styling without introducing an external font request.
+- Validation: `node --check section-one.js`, `node --check server.mjs`, and `git diff --check` passed. The local server returned Section 01 before the greeting and served the Figma Hand font with HTTP 200 and the correct TrueType MIME/signature. Browser visual review remains pending.
+- Limitations: Browser visual review remains pending.
+
 ## 2026-10-12T22:09:55+05:30 — Integrate the cinematic scene as Section 01
 
 - Changed: Added a scroll-controlled “First Contact” chapter after Baymax's greeting, with a per-letter “OUCH” entrance, reduced-motion fallback, six locally optimized frames, and a section link. Added JPEG MIME support to the local server and updated the README and AI usage record.

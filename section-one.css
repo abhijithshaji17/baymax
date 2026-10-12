@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Figma Hand:Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/FigmaHand-Regular.ttf") format("truetype");
+}
+
 .baymax-chapter {
   height: 650svh;
   background: #050606;
@@ -82,7 +90,12 @@
   width: max-content;
   margin: 0;
   color: #fff;
-  font: 400 clamp(80px, 18vw, 300px)/.8 var(--serif, Georgia, serif);
+  font-family: "Figma Hand:Regular", cursive;
+  font-size: clamp(80px, 18vw, 300px);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -.03em;
+  line-height: .8;
   letter-spacing: -.03em;
   white-space: nowrap;
   translate: -50% -50%;

@@ -39,7 +39,7 @@ This repository started as documentation scaffolding and now contains the Baymax
 
 ### Section 01 — First Contact
 
-After Baymax's full-screen greeting, scroll into the first cinematic chapter. The scene opens from a narrow slit, then advances through six locally stored frames as the page scrolls. The “OUCH” title fades in one letter at a time. The scene uses the existing static server and adds no runtime dependencies; reduced-motion settings show a still frame.
+Section 01 is the first scene on the page. Scroll to open it from a narrow slit and advance through six locally stored frames; the existing Baymax greeting follows. “OUCH” keeps the source project's Figma Hand font, bundled locally, and fades in one letter at a time. Reduced-motion settings show a still frame.
 
 ### Run the project
 
@@ -63,7 +63,7 @@ The app uses the supplied `assets/baymax_preview.png` in the experience and pres
 
 ### Current status
 
-- **Working features:** full-screen Baymax greeting with blinking eyes, a Section 01 link, and a scroll-controlled cinematic scene with a per-letter title entrance and reduced-motion support. Six optimized still frames are served locally. The page does not collect health information.
+- **Working features:** a scroll-controlled cinematic Section 01 with a per-letter title entrance, followed by Baymax's full-screen greeting with blinking eyes. Six optimized still frames and the source Figma Hand font are served locally. The page does not collect health information.
 - **Privacy behavior:** the Section 01 scene is static local media. It does not send scene or scroll data to a third party. The server-side chat and status endpoints remain in the repository but are not currently exposed by this page.
 - **Known limitations:** the care dashboard and chat interface are not currently connected to the page. The demo has not undergone a security or clinical review and is not a medical device, clinician, diagnosis, or emergency service.
 - **Libraries and APIs:** [OpenAI JavaScript SDK and API quickstart](https://developers.openai.com/api/docs/quickstart); Responses API. No public datasets are used.
