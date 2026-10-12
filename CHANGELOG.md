@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-12T22:51:33+05:30 — Rename the opening pill to Chat
+
+- Changed: Renamed the Baymax opening pill from “Section 01” to “Chat” in `index.html`; retained its existing Section 01 link.
+- Why: Use the requested label in the opening pill.
+- Validation: `git diff --check` passed.
+- Limitations: The pill is still a link to Section 01.
+
 ## 2026-10-12T22:18:48+05:30 — Put Section 01 first and restore the title font
 
 - Changed: Moved the cinematic chapter before Baymax's greeting and restored the source Figma Hand typeface for “OUCH” using a locally bundled TrueType font file. Added local TTF MIME support and updated the README.

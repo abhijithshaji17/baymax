@@ -63,7 +63,7 @@ The app uses the supplied `assets/baymax_preview.png` in the experience and pres
 
 ### Current status
 
-- **Working features:** a scroll-controlled cinematic Section 01 with a per-letter title entrance, followed by Baymax's full-screen greeting with blinking eyes. Six optimized still frames and the source Figma Hand font are served locally. The page does not collect health information.
+- **Working features:** a scroll-controlled cinematic Section 01 with a per-letter title entrance, followed by Baymax's full-screen greeting with blinking eyes and a Chat pill. Six optimized still frames and the source Figma Hand font are served locally. The page does not collect health information.
 - **Privacy behavior:** the Section 01 scene is static local media. It does not send scene or scroll data to a third party. The server-side chat and status endpoints remain in the repository but are not currently exposed by this page.
 - **Known limitations:** the care dashboard and chat interface are not currently connected to the page. The demo has not undergone a security or clinical review and is not a medical device, clinician, diagnosis, or emergency service.
 - **Libraries and APIs:** [OpenAI JavaScript SDK and API quickstart](https://developers.openai.com/api/docs/quickstart); Responses API. No public datasets are used.
