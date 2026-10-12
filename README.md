@@ -37,6 +37,10 @@ This repository started as documentation scaffolding and now contains the Baymax
 - **Working demo:** Run locally using the steps below.
 - **Technology stack:** Node.js 22+, browser HTML/CSS/JavaScript, and the official OpenAI JavaScript SDK for optional server-side AI replies.
 
+### Section 01 — First Contact
+
+After Baymax's full-screen greeting, scroll into the first cinematic chapter. The scene opens from a narrow slit, then advances through six locally stored frames as the page scrolls. The “OUCH” title fades in one letter at a time. The scene uses the existing static server and adds no runtime dependencies; reduced-motion settings show a still frame.
+
 ### Run the project
 
 1. Install Node.js 22 or newer.
@@ -59,9 +63,9 @@ The app uses the supplied `assets/baymax_preview.png` in the experience and pres
 
 ### Current status
 
-- **Working features:** full-screen Baymax opening with a blinking eye mark and editorial serif greeting, followed by a scroll-led introduction and responsive care dashboard; a health-question input, check-in, visit preparation, local notes, privacy, and urgent-help guidance; session-only chat with loading, error, and clear states; server-side OpenAI Responses API endpoint; fixed-reply demo mode without credentials; editable care-summary draft; opt-in local notes with consent, copy, and delete controls; reduced-motion support. The dashboard does not fabricate body readings or wearable data.
-- **Privacy behavior:** chat is kept in the current tab. When AI mode is active, messages are sent through the local server to OpenAI for the reply. Notes remain in browser local storage only after the user checks consent and saves. The server does not log message content. The demo has not undergone a security or clinical review and is not a medical device, clinician, diagnosis, or emergency service.
-- **Known limitations:** no user accounts, encrypted cloud sync, clinician integration, emergency detection, or medical-record storage. Demo mode is illustrative and does not generate a personalized AI response. The experience uses local system fonts and requests no third-party font files.
+- **Working features:** full-screen Baymax greeting with blinking eyes, a Section 01 link, and a scroll-controlled cinematic scene with a per-letter title entrance and reduced-motion support. Six optimized still frames are served locally. The page does not collect health information.
+- **Privacy behavior:** the Section 01 scene is static local media. It does not send scene or scroll data to a third party. The server-side chat and status endpoints remain in the repository but are not currently exposed by this page.
+- **Known limitations:** the care dashboard and chat interface are not currently connected to the page. The demo has not undergone a security or clinical review and is not a medical device, clinician, diagnosis, or emergency service.
 - **Libraries and APIs:** [OpenAI JavaScript SDK and API quickstart](https://developers.openai.com/api/docs/quickstart); Responses API. No public datasets are used.
 
 See [AI_USAGE.md](AI_USAGE.md) for AI assistance and [CHANGELOG.md](CHANGELOG.md) for the development record.

@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-12T22:09:55+05:30 — Integrate the cinematic scene as Section 01
+
+- Changed: Added a scroll-controlled “First Contact” chapter after Baymax's greeting, with a per-letter “OUCH” entrance, reduced-motion fallback, six locally optimized frames, and a section link. Added JPEG MIME support to the local server and updated the README and AI usage record.
+- Why: Bring the cinematic project into Baymax as its first story section while keeping the target app's existing HTML/CSS/JavaScript stack.
+- Validation: `node --check section-one.js`, `node --check server.mjs`, and `git diff --check` passed. `npm ci` completed. The local server started in demo mode; the page, section CSS/JS, and first and last frame URLs returned HTTP 200 with the expected content types.
+- Limitations: The sequence uses the supplied scene frames; it does not show Baymax in the scene itself. Browser visual review remains pending.
+
 ## 2026-10-12T18:47:30+05:30 — Keep only Baymax's opening section
 
 - Changed: Removed the dashboard, chat, privacy, footer, dialogs, and app chrome so the opening screen is the only page section. Expanded it to fill the viewport in `index.html` and `dashboard.css`.

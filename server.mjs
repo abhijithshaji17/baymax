@@ -5,7 +5,7 @@ import { getChatResult, getMode } from './lib/chat-service.js';
 
 const root = resolve(process.cwd());
 const port = Number(process.env.PORT || 3000);
-const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.obj': 'text/plain; charset=utf-8', '.mtl': 'text/plain; charset=utf-8', '.svg': 'image/svg+xml' };
+const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.obj': 'text/plain; charset=utf-8', '.mtl': 'text/plain; charset=utf-8', '.svg': 'image/svg+xml' };
 
 function json(res, status, value) {
   res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' });
