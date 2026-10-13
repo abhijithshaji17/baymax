@@ -11,10 +11,6 @@ A lightweight, cinematic Baymax-inspired web demo. Scroll through the opening sc
 
 There are no runtime dependencies, environment variables, accounts, or external API calls.
 
-## Deploy on Vercel
-
-The repository config runs `npm run build` and publishes `dist/`. Import this repository into Vercel or use the Vercel CLI from this directory. No environment variables are required.
-
 ## Project structure
 
 ```text

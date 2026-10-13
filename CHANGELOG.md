@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-13T17:42:26+05:30 — Keep the README focused on the local demo
+
+- Changed: Kept the README focused on local setup and build steps while retaining the Vercel config in the project structure.
+- Why: Present the commands needed to run and build the demo concisely.
+- Validation: The static build, syntax checks, whitespace check, and local HTTP asset checks passed earlier in this review.
+- Limitations: Graphical browser inspection and deployed-site availability remain unverified.
+
 ## 2026-10-13T17:41:03+05:30 — Record the final implementation commit
 
 - Changed: Recorded implementation commit `acdb6cd45117a4ab6e106f8e108490f9beeec8b1` in `SUBMISSION.md` and completed the push checklist.
