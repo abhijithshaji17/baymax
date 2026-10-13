@@ -51,37 +51,6 @@
     radial-gradient(ellipse at center, transparent 48%, rgba(0, 0, 0, .32));
 }
 
-.chapter-kicker {
-  position: absolute;
-  z-index: 5;
-  top: 3vh;
-  left: 3vw;
-  display: flex;
-  align-items: center;
-  gap: .8em;
-  margin: 0;
-  color: rgba(255, 255, 255, .72);
-  font-size: 9px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  animation: chapter-label-in 900ms ease-out both;
-}
-
-.chapter-kicker > span:first-child {
-  color: #fff;
-  font-weight: 700;
-}
-
-.chapter-kicker i {
-  width: 20px;
-  height: 1px;
-  background: rgba(255, 255, 255, .5);
-}
-
-.chapter-subtitle {
-  color: rgba(255, 255, 255, .52);
-}
-
 .chapter-title {
   position: absolute;
   z-index: 4;
@@ -113,19 +82,6 @@
   animation: chapter-letter-in 460ms ease-out both;
 }
 
-.chapter-scroll-cue {
-  position: absolute;
-  z-index: 5;
-  bottom: 6vh;
-  left: 50%;
-  margin: 0;
-  color: rgba(255, 255, 255, .72);
-  font-size: 9px;
-  letter-spacing: .24em;
-  text-transform: uppercase;
-  transform: translateX(-50%);
-}
-
 @keyframes chapter-letter-in {
   from { opacity: 0; filter: blur(6px); transform: translateY(.16em); }
   to { opacity: 1; filter: blur(0); transform: translateY(0); }
@@ -137,16 +93,8 @@
   100% { opacity: 1; filter: blur(0); transform: translate3d(0, 0, 0) scale(1) rotate(0); }
 }
 
-@keyframes chapter-label-in {
-  from { opacity: 0; transform: translateY(-6px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 @media (max-width: 700px) {
   .chapter-title { font-size: 24vw; }
-  .chapter-kicker { top: 20px; left: 18px; gap: .55em; font-size: 8px; }
-  .chapter-subtitle { display: none; }
-  .chapter-scroll-cue { bottom: 6vh; font-size: 8px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -156,8 +104,6 @@
   .reduced-motion .chapter-frame { opacity: 0 !important; transform: none !important; }
   .reduced-motion .chapter-frame:nth-of-type(2) { opacity: 1 !important; }
   .reduced-motion .chapter-title { opacity: 1 !important; transform: none !important; }
-  .reduced-motion .chapter-scroll-cue { display: none; }
-  .reduced-motion .chapter-kicker,
   .reduced-motion .chapter-title-letters,
   .reduced-motion .chapter-letter { animation: none !important; }
 }

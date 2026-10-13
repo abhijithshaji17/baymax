@@ -8,6 +8,7 @@ Codex assistance is recorded below. Human review is pending for the implementati
 
 | Date and time with timezone | Tool / model, if known | Task | Assistance and affected files | Human review / corrections | Validation and result |
 | --- | --- | --- | --- | --- | --- |
+| 2026-10-13T10:01:34+05:30 | Codex | Remove dormant features and leftovers | Removed the unloaded dashboard script, unused CSS, disconnected API and OpenAI backend, placeholder markup, and unused favicon; updated `README.md`, `CHANGELOG.md`, dependencies, and the local server. | Pending human review. | Checks not run. |
 | 2026-10-13T00:12:09+05:30 | Codex | Remove the Section 01 kicker and scroll cue | Documented the requested `index.html` edit in `CHANGELOG.md` and this record. | Pending human review. | `git diff --check` passed. Browser visual review pending. |
 | 2026-10-12T22:51:33+05:30 | Codex | Rename the opening pill to Chat | Changed the visible pill label in `index.html` and documented the copy change. | Pending human review. | `git diff --check` passed. |
 | 2026-10-12T22:18:48+05:30 | Codex | Place Section 01 first and restore the original “OUCH” font | Moved the chapter ahead of the greeting and bundled the source Figma Hand font locally; added server MIME support and updated the README and changelog. | Pending human review. | `node --check section-one.js`, `node --check server.mjs`, `git diff --check`, section-order check, and local font response check passed. Browser visual review pending. |

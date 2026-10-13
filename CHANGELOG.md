@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-13T10:01:34+05:30 — Remove dormant app and backend code
+
+- Changed: Removed the unloaded dashboard script, unused dashboard styles, and disconnected chat/status endpoints and OpenAI service. Simplified the static server and dependencies, removed empty scene placeholders, an unlinked favicon, and an empty fonts directory; corrected setup and deployment notes.
+- Why: Keep only assets and code that support the current cinematic page or the documented 3D model deliverables.
+- Validation: Not run.
+- Limitations: Browser visual review remains pending.
+
 ## 2026-10-13T00:12:09+05:30 — Remove the Section 01 kicker and scroll cue
 
 - Changed: Cleared the “BAYMAX / SECTION 01 — FIRST CONTACT” kicker and “SCROLL TO PLAY” cue from `index.html`.

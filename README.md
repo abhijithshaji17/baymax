@@ -32,10 +32,10 @@ This repository started as documentation scaffolding and now contains the Baymax
 ## Project overview
 
 - **Project name:** Baymax — personal healthcare companion.
-- **Short description:** A supportive companion for everyday health conversations, optional check-ins, and preparing editable notes for a clinician.
+- **Short description:** A cinematic landing page introducing a Baymax-inspired personal healthcare companion.
 - **Team:** Team Hamada.
 - **Working demo:** Run locally using the steps below.
-- **Technology stack:** Node.js 22+, browser HTML/CSS/JavaScript, and the official OpenAI JavaScript SDK for optional server-side AI replies.
+- **Technology stack:** Node.js 22+ and browser HTML/CSS/JavaScript.
 
 ### Section 01 — First Contact
 
@@ -44,29 +44,26 @@ Section 01 is the first scene on the page. Scroll to open it from a narrow slit 
 ### Run the project
 
 1. Install Node.js 22 or newer.
-2. Install the server dependency: `npm install`.
-3. Optional AI setup: copy `.env.example` to `.env` and add an `OPENAI_API_KEY`. Keep the key in `.env`; never add it to browser code or commit it. `OPENAI_MODEL` can be changed to a model available to your API project. With no key, the app runs in clearly labeled demo mode and returns a fixed sample reply.
-4. Start the local server: `npm start`.
-5. Open the URL printed by `npm start` (normally [http://127.0.0.1:3000](http://127.0.0.1:3000)). Use the Node server URL rather than opening `index.html` directly; the server provides the `/api` routes the chat needs. If the selected port is busy, the server automatically tries the next one. Set `PORT` in `.env` to choose a starting port.
+2. Start the local static server: `npm start`.
+3. Open the URL printed by `npm start` (normally [http://127.0.0.1:3000](http://127.0.0.1:3000)). If the selected port is busy, the server automatically tries the next one. Set `PORT` to choose a starting port.
 
 ### Deploy on Vercel
 
-The frontend is served as static files, and the `/api` directory contains Vercel Node.js Functions for chat and status. Vercel detects functions in this directory automatically; `vercel.json` selects the “Other” framework preset.
+The project is a static page. `vercel.json` selects Vercel's “Other” framework preset.
 
 1. Import this repository into Vercel, or run `npx vercel` from the project root and follow its prompts.
-2. In the Vercel project’s **Settings → Environment Variables**, add `OPENAI_API_KEY` for the environments you plan to deploy (Production, Preview, and/or Development). Add `OPENAI_MODEL` only if you want to override the default model. Keep these values in Vercel’s environment settings; do not commit `.env`.
-3. Deploy a preview first. When it works, deploy to production from the Vercel dashboard or run `npx vercel --prod`.
+2. Deploy a preview first. When it works, deploy to production from the Vercel dashboard or run `npx vercel --prod`.
 
-Without `OPENAI_API_KEY`, the deployed API stays in clearly labeled demo mode with a fixed sample reply. Vercel ignores local `.env` files through `.vercelignore`.
+The deployed project is a static page and needs no environment variables.
 
-The app uses the supplied `assets/baymax_preview.png` in the experience and preserves the editable OBJ/MTL and Blender scene. Rebuild those model assets with `blender --background --python assets/build_baymax_scene.py` from the repository root.
+The 3D model files are optional project assets and are not loaded by the page. Rebuild them with `blender --background --python assets/build_baymax_scene.py` from the repository root.
 
 ### Current status
 
 - **Working features:** a scroll-controlled cinematic Section 01 with a per-letter title entrance, followed by Baymax's full-screen greeting with blinking eyes and a Chat pill. Six optimized still frames and the source Figma Hand font are served locally. The page does not collect health information.
-- **Privacy behavior:** the Section 01 scene is static local media. It does not send scene or scroll data to a third party. The server-side chat and status endpoints remain in the repository but are not currently exposed by this page.
-- **Known limitations:** the care dashboard and chat interface are not currently connected to the page. The demo has not undergone a security or clinical review and is not a medical device, clinician, diagnosis, or emergency service.
-- **Libraries and APIs:** [OpenAI JavaScript SDK and API quickstart](https://developers.openai.com/api/docs/quickstart); Responses API. No public datasets are used.
+- **Privacy behavior:** the page is static local media and does not send scene or scroll data to a third party.
+- **Known limitations:** the project is a visual demo. It has not undergone a security or clinical review and is not a medical device, clinician, diagnosis, or emergency service.
+- **Libraries and APIs:** no runtime dependencies or external APIs. No public datasets are used.
 
 See [AI_USAGE.md](AI_USAGE.md) for AI assistance and [CHANGELOG.md](CHANGELOG.md) for the development record.
 

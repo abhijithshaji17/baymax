@@ -3,7 +3,6 @@ const section = document.querySelector("#baymax-section-01");
 if (section) {
   const title = section.querySelector(".chapter-title");
   const letters = section.querySelector(".chapter-title-letters");
-  const scrollCue = section.querySelector(".chapter-scroll-cue");
   const scene = section.querySelector(".chapter-scene");
   const frames = [...section.querySelectorAll(".chapter-frame")];
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -38,7 +37,6 @@ if (section) {
       scene.style.clipPath = `inset(${(1 - sceneOpen) * 50}% 0 ${(1 - sceneOpen) * 50}% 0)`;
       title.style.opacity = String(1 - titleExit);
       title.style.transform = `translate3d(${-titleExit * 65}vw, 0, 0)`;
-      scrollCue.style.opacity = String(1 - clamp(progress / 0.08));
 
       frames.forEach((frame, index) => {
         let opacity = 0;
