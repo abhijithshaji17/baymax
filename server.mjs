@@ -4,7 +4,14 @@ import { extname, resolve, sep } from 'node:path';
 
 const root = resolve(process.cwd());
 const port = Number(process.env.PORT || 3000);
-const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.ttf': 'font/ttf', '.obj': 'text/plain; charset=utf-8', '.mtl': 'text/plain; charset=utf-8', '.svg': 'image/svg+xml' };
+const MIME = {
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'text/javascript; charset=utf-8',
+  '.jpg': 'image/jpeg',
+  '.ttf': 'font/ttf',
+  '.svg': 'image/svg+xml',
+};
 
 function error(res, status, message) {
   res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', 'x-content-type-options': 'nosniff' });

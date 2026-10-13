@@ -1,33 +1,6 @@
 # Baymax - personal healthcare companion
 
-A repository template for participants at the 10–11 October 2026 hackathon. It contains event rules and documentation scaffolding; build your project from scratch at the event.
-
-**[Event and registration on Luma](https://luma.com/z10nz8gp)** · **[Event rules](RULES.md)** · **[Agent instructions](AGENTS.md)**
-
-## Event details
-
-| Detail | Information |
-| --- | --- |
-| Venue | JAIN University, Kochi |
-| Location | [Open the venue map](https://maps.app.goo.gl/Eme7gR7NDXSNRANu5) |
-| Rooms | 2008 and 2009 |
-| Check-in | 10 October 2026, 6:00 PM IST |
-| Kick-off | 10 October 2026, 6:30 PM IST |
-| Wrap-up | 11 October 2026, by 10:00 AM IST |
-| Participation | Solo or a team of up to 4 participants |
-| Theme | Open — build anything you like |
-
-Keep your approved Luma QR code ready for entry, and bring your laptop and charger. Eligible checked-in participants will receive Codex credits and OpenAI API credits.
-
-## Use this template
-
-1. Select **Use this template → Create a new repository** on GitHub. Create your own project repository and clone it.
-2. Read [RULES.md](RULES.md) and [AGENTS.md](AGENTS.md) before building. Begin project implementation at the event.
-3. Fill in the project overview below as you build. Use any suitable language or framework, keeping the implementation simple.
-4. Record meaningful changes in [CHANGELOG.md](CHANGELOG.md) and your Codex usage in [AI_USAGE.md](AI_USAGE.md). Commit after completed milestones; aim for a meaningful checkpoint about every 30 minutes.
-5. Complete [SUBMISSION.md](SUBMISSION.md) with your code repository, short project description, and working demo. Follow submission instructions announced by the organizers.
-
-This repository started as documentation scaffolding and now contains the Baymax MVP described below. The documentation and commit cadence are repository workflow guidance; the event participation rules are in [RULES.md](RULES.md).
+Responsive static demo comprising a cinematic opening, an inverted-color Baymax greeting, and an interactive pain-rating screen. Event rules and repository guidance remain in [RULES.md](RULES.md) and [AGENTS.md](AGENTS.md).
 
 ## Project overview
 
@@ -65,8 +38,6 @@ The project is a static page. `vercel.json` selects Vercel's “Other” framewo
 
 The deployed project is a static page and needs no environment variables.
 
-The 3D model files are optional project assets and are not loaded by the page. Rebuild them with `blender --background --python assets/build_baymax_scene.py` from the repository root.
-
 ### Current status
 
 - **Working features:** a scroll-controlled cinematic Section 01, an inverted-color Baymax greeting, and an interactive ten-point pain rating with a rating-specific response. Six optimized still frames and the source Figma Hand font are served locally. Ratings remain only in page memory.
@@ -75,9 +46,3 @@ The 3D model files are optional project assets and are not loaded by the page. R
 - **Libraries and APIs:** no runtime dependencies or external APIs. No public datasets are used.
 
 See [AI_USAGE.md](AI_USAGE.md) for AI assistance and [CHANGELOG.md](CHANGELOG.md) for the development record.
-
-## Baymax 3D model
-
-`assets/baymax.obj` is a smooth, stylized character mesh with `assets/baymax.mtl` materials. Import the OBJ into Blender or another OBJ-compatible 3D editor.
-
-To recreate the Blender project, OBJ export, and preview, run `blender --background --python assets/build_baymax_scene.py` from the repository root. The script builds the upright character and writes `assets/baymax.blend`, `assets/baymax.obj`, `assets/baymax.mtl`, and `assets/baymax_preview.png`. The scene was generated and rendered with Blender 5.2.2; no Blender MCP connection was available, so Blender was run locally.

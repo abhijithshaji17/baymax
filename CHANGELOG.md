@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-13T13:28:40+05:30 — Clean stale Baymax project files and references
+
+- Changed: Removed the empty no-dependency npm lockfile, obsolete 3D-model instructions, unused server MIME entries, a duplicate CSS declaration, an unused SVG class, and old template/submission claims. Preserved all assets and source files referenced by the two active app entrypoints.
+- Why: Remove leftovers without breaking either the Figma Make preview or the standalone Baymax project.
+- Validation: Both root and Baymax `npm run build` commands passed; Baymax JavaScript syntax and diff checks passed. Removed generated `dist/` outputs afterward; each build command recreates its output.
+- Limitations: No exact duplicate source files were found.
+
 ## 2026-10-13T13:20:18+05:30 — Add Section 03 and project commands to the standalone Baymax app
 
 - Changed: Added the responsive pain-rating section, ten selectable faces and rating-specific supportive messages to the static app. Linked the Section 02 Chat pill to Section 03. Added `npm run dev` and a static `npm run build` that writes deployable files to `dist/`; updated setup documentation.
