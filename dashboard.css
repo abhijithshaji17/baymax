@@ -22,30 +22,31 @@ a { color: inherit; text-decoration: none; }
   height: 100svh;
   place-items: center;
   overflow: hidden;
-  background: #050606;
+  background: #fff;
+  color: #050606;
 }
-.opening-eyes { position: absolute; inset: 0; background: #050606; }
+.opening-eyes { position: absolute; inset: 0; background: #fff; }
 .opening-eyes svg { display: block; width: 100%; height: 100%; }
 .eyes-settle { transform-box: fill-box; transform-origin: center; animation: eye-settle 1.2s ease-in-out 2.4s both; }
-.eye-bridge { fill: none; stroke: #fff; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 177; stroke-dashoffset: 177; opacity: 0; animation: bridge-connect .7s cubic-bezier(.22,.72,.24,1) 1.7s both; }
-.eye-glow { fill: #fff; opacity: 0; transform-box: fill-box; transform-origin: center; filter: blur(3px); animation: eye-glow-expand .72s ease-out both; }
+.eye-bridge { fill: none; stroke: #050606; stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 177; stroke-dashoffset: 177; opacity: 0; animation: bridge-connect .7s cubic-bezier(.22,.72,.24,1) 1.7s both; }
+.eye-glow { fill: #050606; opacity: 0; transform-box: fill-box; transform-origin: center; filter: blur(3px); animation: eye-glow-expand .72s ease-out both; }
 .eye-glow-left { animation-delay: .9s; }
 .eye-glow-right { animation-delay: 1.3s; }
-.eye { fill: #fff; opacity: 0; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 16px rgba(255,255,255,.9)); animation: eye-power-on .62s cubic-bezier(.18,.78,.26,1) forwards; }
+.eye { fill: #050606; opacity: 0; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 12px rgba(0,0,0,.18)); animation: eye-power-on .62s cubic-bezier(.18,.78,.26,1) forwards; }
 .eye-left { animation-delay: .9s; }
 .eye-right { animation-delay: 1.3s; }
 .eye-blink { transform-box: fill-box; transform-origin: center; animation: baymax-blink 6.8s ease-in-out 4.5s infinite; }
-.opening-copy { position: absolute; z-index: 1; right: 22px; bottom: 22%; left: 22px; color: #fff; text-align: center; text-shadow: 0 2px 24px #000; }
+.opening-copy { position: absolute; z-index: 1; right: 22px; bottom: 22%; left: 22px; color: #050606; text-align: center; }
 .opening-copy p, .opening-copy span { opacity: 0; transform: translateY(20px); }
 .opening-copy p { margin: 0; font: 400 clamp(35px, 5.4vw, 68px)/1.12 var(--serif); letter-spacing: -.035em; animation: copy-reveal .8s cubic-bezier(.2,.7,.25,1) 2.9s both; }
-.opening-copy span { display: block; margin-top: 8px; color: rgba(255,255,255,.76); font: 400 clamp(15px, 2vw, 22px)/1.4 var(--serif); animation: copy-reveal .8s cubic-bezier(.2,.7,.25,1) 3.3s both; }
-.opening-menu { position: absolute; z-index: 2; bottom: 34px; left: 50%; display: flex; min-height: 48px; max-width: calc(100% - 48px); align-items: center; justify-content: center; padding: 5px 8px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px; background: rgba(225,233,237,.2); box-shadow: inset 0 1px rgba(255,255,255,.12), 0 10px 35px rgba(0,0,0,.12); color: rgba(255,255,255,.9); opacity: 0; transform: translate(-50%,12px); backdrop-filter: blur(18px); animation: menu-reveal .8s cubic-bezier(.2,.7,.25,1) 3.65s both; }
+.opening-copy span { display: block; margin-top: 8px; color: rgba(5,6,6,.76); font: 400 clamp(15px, 2vw, 22px)/1.4 var(--serif); animation: copy-reveal .8s cubic-bezier(.2,.7,.25,1) 3.3s both; }
+.opening-menu { position: absolute; z-index: 2; bottom: 34px; left: 50%; display: flex; min-height: 48px; max-width: calc(100% - 48px); align-items: center; justify-content: center; padding: 5px 8px; border: 1px solid rgba(5,6,6,.18); border-radius: 999px; background: rgba(5,6,6,.08); box-shadow: inset 0 1px rgba(255,255,255,.35), 0 10px 35px rgba(0,0,0,.08); color: rgba(5,6,6,.9); opacity: 0; transform: translate(-50%,12px); backdrop-filter: blur(18px); animation: menu-reveal .8s cubic-bezier(.2,.7,.25,1) 3.65s both; }
 .opening-menu a { display: inline-flex; min-width: 0; align-items: center; justify-content: center; gap: 9px; padding: 8px 17px; border-radius: 999px; font-size: 15px; white-space: nowrap; transition: background .2s ease; }
 .opening-menu a span { font-size: 1.15em; }
-.opening-menu a:hover, .opening-menu a:focus-visible { outline: none; background: rgba(255,255,255,.16); }
+.opening-menu a:hover, .opening-menu a:focus-visible { outline: none; background: rgba(5,6,6,.1); }
 
-@keyframes eye-glow-expand { 0% { opacity: 0; transform: scale(.02); filter: blur(2px); } 18% { opacity: .82; } 68% { opacity: .32; transform: scale(1.45); filter: blur(9px); } 100% { opacity: 0; transform: scale(1.85); filter: blur(14px); } }
-@keyframes eye-power-on { 0% { opacity: .08; transform: scale(.025); filter: drop-shadow(0 0 14px #fff) brightness(2.5); } 48% { opacity: .96; transform: scale(1.08); filter: drop-shadow(0 0 12px #fff) brightness(1.6); } 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 2px rgba(255,255,255,.24)); } }
+@keyframes eye-glow-expand { 0% { opacity: 0; transform: scale(.02); filter: blur(2px); } 18% { opacity: .45; } 68% { opacity: .2; transform: scale(1.45); filter: blur(9px); } 100% { opacity: 0; transform: scale(1.85); filter: blur(14px); } }
+@keyframes eye-power-on { 0% { opacity: .08; transform: scale(.025); filter: drop-shadow(0 0 10px #000) brightness(2.5); } 48% { opacity: .96; transform: scale(1.08); filter: drop-shadow(0 0 8px #000) brightness(1.6); } 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 2px rgba(0,0,0,.16)); } }
 @keyframes bridge-connect { from { opacity: .15; stroke-dashoffset: 177; } to { opacity: 1; stroke-dashoffset: 0; } }
 @keyframes eye-settle { 0%, 100% { transform: scale(1); } 45% { transform: scale(1.018); } }
 @keyframes baymax-blink { 0%, 13%, 20%, 100% { transform: scaleY(1); } 15%, 17% { transform: scaleY(.07); } }

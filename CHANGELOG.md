@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-13T10:54:10+05:30 — Invert Section 2 colors
+
+- Changed: Changed the Baymax greeting section to a white background with black eyes and text in both the React preview and standalone Baymax page.
+- Why: Apply the requested black/white inversion to Section 2 while leaving the cinematic Section 1 dark.
+- Validation: Not run. The preview server is running with hot reload; browser automation was unavailable in this session.
+- Limitations: Visual confirmation in a browser remains pending.
+
 ## 2026-10-13T10:01:34+05:30 — Remove dormant app and backend code
 
 - Changed: Removed the unloaded dashboard script, unused dashboard styles, and disconnected chat/status endpoints and OpenAI service. Simplified the static server and dependencies, removed empty scene placeholders, an unlinked favicon, and an empty fonts directory; corrected setup and deployment notes.
