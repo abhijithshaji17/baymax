@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-13T17:35:22+05:30 — Restore the runnable static site and refresh setup notes
+
+- Changed: Restored the four section styles/scripts required by the page and build; rewrote the README with accurate run, build, and Vercel instructions; corrected the unrecorded final-push checklist item.
+- Why: The pending file removals made the production build fail, and the README described files that were absent.
+- Validation: The initial build exposed the pending deletion of `section-one.css`; after restoring the required tracked section files, `npm run build`, `node --check` for the server and both scripts, and `git diff --check` passed. Local HTTP HEAD requests returned 200 for the page, all styles/scripts, font, icon, and first/last scene frames.
+- Limitations: GitHub push and deployed-site availability remain to be confirmed.
+
 ## 2026-10-13T14:00:00+05:30 — Restore assets required by the Vercel build
 
 - Changed: Restored the favicon, bundled font, and six cinematic scene frames removed from the deployment branch; retained the explicit Vercel build command and `dist` output configuration.

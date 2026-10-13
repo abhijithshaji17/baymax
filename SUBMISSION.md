@@ -13,11 +13,11 @@ Complete this file during the hackathon and use it to prepare your submission th
 
 ## Participants
 
-Participant details were not recorded in this project directory.
+Participant details were recorded in this project directory.
 
 | Participant name | GitHub handle | Contribution |
-| --- | --- | --- |
-| Not recorded | Not recorded | Not recorded |
+|1. Abhijith Shaji | @abhijithshaji17 | Everything |
+
 
 ## Run and demonstrate
 
@@ -34,8 +34,8 @@ Participant details were not recorded in this project directory.
 
 ## Submission checklist
 
-- [ ] The project implementation started from scratch at the event.
-- [ ] Participant count and eligibility have been confirmed.
+- [X] The project implementation started from scratch at the event.
+- [X] Participant count and eligibility have been confirmed.
 - [x] Codex was used during development and its usage is documented.
 - [x] The code repository URL, short description, and local demo steps are provided.
 - [x] README setup and demo instructions match the submitted code.
@@ -43,6 +43,6 @@ Participant details were not recorded in this project directory.
 - [x] Meaningful changes are documented and committed.
 - [ ] The final implementation is pushed and its submitted commit SHA is recorded above.
 - [x] No credentials or private participant data are included in the repository or demo instructions.
-- [ ] The organizers' submission method and timing have been confirmed.
+- [X] The organizers' submission method and timing have been confirmed.
 
 Event reference: [DevDay Exchange Community: Kochi on Luma](https://luma.com/z10nz8gp). The event wraps up by **10:00 AM IST on 11 October 2026**.
