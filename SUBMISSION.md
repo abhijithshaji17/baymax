@@ -7,7 +7,7 @@ Complete this file during the hackathon and use it to prepare your submission th
 - **Project name:** Baymax
 - **Short description:** A three-section Baymax-inspired visual demo with a cinematic opening and interactive pain rating.
 - **Code repository URL:** github.com/abhijithshaji17/baymax
-- **Final submitted implementation commit SHA:** Pending final submission.
+- **Final submitted implementation commit SHA:** `acdb6cd45117a4ab6e106f8e108490f9beeec8b1`
 - **Working demo:** Run `npm run dev`, then open the local URL printed by the server.
 - **Demo access requirements:** Node.js 22 or newer; no account or environment variables.
 
@@ -41,7 +41,7 @@ Participant details were recorded in this project directory.
 - [x] README setup and demo instructions match the submitted code.
 - [x] Checks and known limitations are documented.
 - [x] Meaningful changes are documented and committed.
-- [ ] The final implementation is pushed and its submitted commit SHA is recorded above.
+- [x] The final implementation is pushed and its submitted commit SHA is recorded above.
 - [x] No credentials or private participant data are included in the repository or demo instructions.
 - [X] The organizers' submission method and timing have been confirmed.
 
