@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-13T13:38:34+05:30 — Match the browser icon to the supplied mark
+
+- Changed: Matched the favicon to the supplied black eyes and connector on a white square, and added a version query to both page references to refresh cached icons.
+- Why: Make the browser tab mark match the user's reference.
+- Validation: Root and standalone production builds passed; both preview pages referenced the versioned icon and both icon URLs returned HTTP 200.
+- Limitations: Browser-tab rendering has not been visually inspected.
+
 ## 2026-10-13T13:28:40+05:30 — Clean stale Baymax project files and references
 
 - Changed: Removed the empty no-dependency npm lockfile, obsolete 3D-model instructions, unused server MIME entries, a duplicate CSS declaration, an unused SVG class, and old template/submission claims. Preserved all assets and source files referenced by the two active app entrypoints.
