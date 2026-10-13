@@ -9,7 +9,9 @@
   <link rel="icon" type="image/svg+xml" href="/assets/baymax-mark.svg">
   <link rel="stylesheet" href="dashboard.css">
   <link rel="stylesheet" href="section-one.css">
+  <link rel="stylesheet" href="section-three.css">
   <script src="section-one.js" defer></script>
+  <script src="section-three.js" defer></script>
 </head>
 <body>
   <main>
@@ -52,8 +54,22 @@
       </div>
       <div class="opening-copy"><p>Hi, I’m Baymax.</p><span>Your personal healthcare companion</span></div>
       <nav class="opening-menu" aria-label="Baymax quick menu">
-        <a href="#baymax-section-01">Chat<span aria-hidden="true">↘</span></a>
+        <a href="#baymax-pain-rating">Chat<span aria-hidden="true">↘</span></a>
       </nav>
+    </section>
+
+    <section class="pain-screen" id="baymax-pain-rating" aria-labelledby="pain-question">
+      <div class="pain-panel">
+        <h2 id="pain-question">On a scale of 1–10, how would you rate your pain?</h2>
+        <div class="pain-scale" role="group" aria-label="Rate your pain from 1 to 10"></div>
+        <p class="pain-response" aria-live="polite"></p>
+      </div>
+      <div class="pain-meter" aria-hidden="true">
+        <svg viewBox="0 0 180 180">
+          <circle cx="90" cy="90" r="88"/>
+          <path d="M2 88h38l20-27h58l21 27h39"/>
+        </svg>
+      </div>
     </section>
   </main>
 </body>

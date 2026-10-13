@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-13T13:20:18+05:30 — Add Section 03 and project commands to the standalone Baymax app
+
+- Changed: Added the responsive pain-rating section, ten selectable faces and rating-specific supportive messages to the static app. Linked the Section 02 Chat pill to Section 03. Added `npm run dev` and a static `npm run build` that writes deployable files to `dist/`; updated setup documentation.
+- Why: The requested preview and npm commands were being used inside `baymax/`, while the previous Section 03 implementation lived only in the parent React preview.
+- Validation: `npm run build`, JavaScript syntax checks, and `git diff --check` passed. Confirmed the `dev` server and built static output return HTTP 200 for the page, Section 03 assets, and a scene frame.
+- Limitations: Section 03 is a visual demo, not a clinical assessment.
+
 ## 2026-10-13T10:54:10+05:30 — Invert Section 2 colors
 
 - Changed: Changed the Baymax greeting section to a white background with black eyes and text in both the React preview and standalone Baymax page.

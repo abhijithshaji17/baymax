@@ -8,7 +8,9 @@
     "node": "22.x"
   },
   "scripts": {
-    "start": "node server.mjs"
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "build": "node build.mjs"
   },
   "repository": {
     "type": "git",

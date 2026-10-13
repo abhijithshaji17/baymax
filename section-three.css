@@ -1,0 +1,132 @@
+.pain-screen {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: clamp(238px, 26vh, 285px) clamp(14px, 1.5vw, 24px) 40px;
+  background: #fff;
+  color: #050606;
+}
+
+.pain-panel {
+  width: min(76vw, 1080px);
+  margin: 0;
+  padding: clamp(32px, 4.5vw, 58px) clamp(20px, 4vw, 54px) clamp(22px, 3vw, 40px);
+  border-radius: 26px;
+  background: linear-gradient(120deg, #d7ebfb 0%, #e7f4ff 100%);
+  box-shadow: 0 0 38px 20px rgba(174, 218, 255, .42);
+  animation: pain-panel-in 850ms cubic-bezier(.2,.7,.25,1) both;
+}
+
+.pain-panel h2 {
+  max-width: 1000px;
+  margin: 0 auto clamp(28px, 4vw, 52px);
+  font: 400 clamp(34px, 5.4vw, 76px)/1.12 var(--serif);
+  letter-spacing: -.025em;
+  text-shadow: 0 3px 3px rgba(0,0,0,.2);
+}
+
+.pain-scale {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(10px, 2vw, 22px) clamp(8px, 1.5vw, 17px);
+  width: min(100%, 850px);
+  margin: 0 auto;
+}
+
+.pain-choice {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 0 4px;
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
+  color: #050606;
+  cursor: pointer;
+  font: 700 clamp(16px, 1.8vw, 22px)/1 Arial, Helvetica, sans-serif;
+  animation: pain-choice-in 560ms cubic-bezier(.2,.7,.25,1) calc(180ms + var(--choice-index) * 45ms) both;
+}
+
+.pain-face-art {
+  display: block;
+  width: min(100%, 142px);
+  overflow: visible;
+  filter: drop-shadow(0 2px 1px rgba(0,0,0,.18));
+  transition: transform 200ms ease, filter 200ms ease;
+}
+
+.pain-choice:hover .pain-face-art,
+.pain-choice:focus-visible .pain-face-art,
+.pain-choice.is-selected .pain-face-art {
+  transform: translateY(-4px) scale(1.05);
+  filter: drop-shadow(0 6px 4px rgba(0,0,0,.2));
+}
+
+.pain-choice:focus-visible {
+  outline: 3px solid #2878bf;
+  outline-offset: 4px;
+}
+
+.pain-choice.is-selected > span { color: #1769a9; }
+
+.pain-response {
+  min-height: 1.4em;
+  margin: clamp(30px, 3vw, 38px) 0 0;
+  color: crimson;
+  font: 400 clamp(18px, 2.1vw, 24px)/1.4 var(--serif);
+  text-align: center;
+}
+
+.pain-meter {
+  position: absolute;
+  top: clamp(10px, 1vw, 16px);
+  right: clamp(10px, 1vw, 16px);
+  width: clamp(84px, 20vw, 294px);
+  aspect-ratio: 1;
+  opacity: .7;
+  animation: meter-in 850ms cubic-bezier(.2,.7,.25,1) 140ms both;
+}
+
+.pain-meter svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 3px 3px rgba(0,0,0,.12));
+}
+
+.pain-meter circle { fill: #aaa7a3; stroke: #8e8b87; stroke-width: 3; }
+.pain-meter path { fill: none; stroke: #8e8b87; stroke-width: 4; stroke-linejoin: round; }
+
+@keyframes pain-panel-in {
+  from { opacity: 0; transform: translateY(24px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes pain-choice-in {
+  from { opacity: 0; transform: translateY(14px) scale(.92); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes meter-in {
+  from { opacity: 0; transform: translateY(-10px) scale(.96); }
+  to { opacity: .7; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 700px) {
+  .pain-screen { padding: 138px 15px 26px; }
+  .pain-panel { width: 100%; padding: 24px 14px 18px; border-radius: 20px; }
+  .pain-panel h2 { margin: 0 0 24px; font-size: clamp(28px, 8vw, 42px); text-align: center; }
+  .pain-scale { gap: 14px 8px; }
+  .pain-choice { gap: 4px; font-size: 15px; }
+  .pain-face-art { width: min(100%, 72px); }
+  .pain-response { margin-top: 26px; }
+  .pain-meter { top: 8px; right: 9px; width: clamp(74px, 23vw, 112px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pain-panel, .pain-choice, .pain-meter { animation: none; }
+  .pain-face-art { transition: none; }
+}
