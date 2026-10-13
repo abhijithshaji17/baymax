@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-13T14:00:00+05:30 — Restore assets required by the Vercel build
+
+- Changed: Restored the favicon, bundled font, and six cinematic scene frames removed from the deployment branch; retained the explicit Vercel build command and `dist` output configuration.
+- Why: The build script copies these files into the static deployment, and scene code references them at runtime.
+- Validation: `npm run build`, JavaScript syntax checks, and `git diff --check` passed. The output contains the page, scripts, styles, font, favicon, and all six frames.
+- Limitations: The new deployment has not completed yet.
+
 ## 2026-10-13T13:48:51+05:30 — Configure Vercel to build the static site
 
 - Changed: Set Vercel's build command to `npm run build` and output directory to `dist` in `vercel.json`; clarified the deployment setup in `README.md`.
