@@ -31,7 +31,7 @@ Choose one of ten illustrated ratings. Each choice reveals a distinct supportive
 
 ### Deploy on Vercel
 
-The project is a static page. `vercel.json` selects Vercel's “Other” framework preset.
+The project is a static page. `vercel.json` selects Vercel's “Other” framework preset, runs `npm run build`, and serves the generated `dist/` directory.
 
 1. Import this repository into Vercel, or run `npx vercel` from the project root and follow its prompts.
 2. Deploy a preview first. When it works, deploy to production from the Vercel dashboard or run `npx vercel --prod`.

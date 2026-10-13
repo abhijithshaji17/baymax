@@ -4,6 +4,13 @@ Record each meaningful project change during the event, newest first. Update thi
 
 ## Event build log
 
+## 2026-10-13T13:48:51+05:30 — Configure Vercel to build the static site
+
+- Changed: Set Vercel's build command to `npm run build` and output directory to `dist` in `vercel.json`; clarified the deployment setup in `README.md`.
+- Why: Make Vercel create and serve the actual generated static site instead of relying on implicit Other-preset defaults.
+- Validation: `npm run build`, JavaScript syntax checks, and `git diff --check` passed. Confirmed `dist/` contains the page, all styles/scripts, favicon, font, and six scene frames.
+- Limitations: The Vercel deployment itself has not been rerun from this workspace.
+
 ## 2026-10-13T13:38:34+05:30 — Match the browser icon to the supplied mark
 
 - Changed: Matched the favicon to the supplied black eyes and connector on a white square, and added a version query to both page references to refresh cached icons.
